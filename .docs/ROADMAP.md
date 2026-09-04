@@ -1,5 +1,5 @@
 # 🗺️ Roadmap สู่ Intermediate Developer — Kxitta
-> **เริ่ม:** 2 ก.ย. 2569 | **เป้าหมาย:** Intermediate Developer เต็มตัว  
+> **เริ่ม:** 2 ก.ย. 2569 | **เป้าหมาย:** สร้าง Interactive Web App 1 โปรเจกต์ที่แก้ปัญหาจริง (มี Logic ซับซ้อน + Local Storage + สถาปัตยกรรม Clean Code) และสร้าง Portfolio ออนไลน์  
 > **เวลา/วัน:** 2–3 ชั่วโมง | **วันพัก:** อาทิตย์  
 > **ปฏิทินมหาลัย:** ราชมงคลอีสาน ปีการศึกษา 2569
 
@@ -43,21 +43,23 @@
 > ทำได้ปกติ แต่อย่าเพิ่งเริ่มโปรเจกต์ใหญ่ — รอปิดเทอมดีกว่า
 
 ### สัปดาห์ที่ 1 (2–7 ก.ย.)
-- **TS:** `.filter()` + `.map()` — **เสริมจากตรงนี้ ไม่ใช่ reduce ก่อน**
-  - โจทย์: **เขียนโจทย์เก่า 5 ข้อใหม่** โดยห้ามใช้ `for` loop — ใช้ `.filter()` และ `.map()` แทนทั้งหมด
+- **TS:** `.filter()` + `.map()` + **Arrow Functions (`=>`)**
+  - ไวยากรณ์: Implicit Return (`x => x * 2`), การ return Object `x => ({ ... })`, และ Type Signature
+  - โจทย์: **เขียนโจทย์เก่า 5 ข้อใหม่** โดยห้ามใช้ `for` loop — ใช้ `.filter()` และ `.map()` ควบคู่กับ Arrow Functions
   - เป้า: เขียนได้โดยไม่ต้องคิดนาน และ chain ได้ `.filter(...).map(...)` ในบรรทัดเดียว
 - **CSS:** Box Model, margin, padding, color, font, unit (px, %, rem)
+- **Git (ปลดล็อกแล้ว):** ใช้ `git add` + `git commit` + `git push` บันทึกโค้ดฝึกซ้อมขึ้น GitHub (`kxitta-road`) ทุกวันหลังเขียนเสร็จ
 
 ### สัปดาห์ที่ 2 (8–14 ก.ย.)
 - **TS:** `.reduce()` — **หลังจาก filter/map คล่องแล้ว** reduce จะ click เอง
   - โจทย์: แทน aggregation loop ทั้งหมดด้วย reduce — หา sum, count, group by key
 - **CSS:** Flexbox เริ่มต้น — เล่น [flexboxfroggy.com](https://flexboxfroggy.com)
-- **Git:** `git init` + `git commit` — ฝึก commit โจทย์ประจำวันทุกวัน
+- **Git:** อัปเกรดมาตรฐาน Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`) + ฝึกใช้ `git diff` และ `git log --oneline` ตรวจสอบโค้ดก่อน commit
 
 ### สัปดาห์ที่ 3 (15–21 ก.ย.)
 - **TS:** Generics `<T>` — `function identity<T>`, `function getFirst<T>`, `function filterBy<T>` (5 โจทย์)
 - **CSS:** Flexbox + CSS Variables + Hover Effect
-- **Git:** เปิด GitHub + `git push` ครั้งแรก
+- **Git:** Branching เบื้องต้น (`git branch`, `git switch -c feature/xxx`, `git merge`) แยกโค้ดทดลองออกจาก branch `main`
 
 ---
 
@@ -81,9 +83,9 @@
   - หน้า UI ใส่คะแนน → TS คำนวณเกรด → DOM ยัดผลลัพธ์บนหน้าเว็บ
 
 ### สัปดาห์ปิดเทอม 3 (24–30 ต.ค.)
-- **โปรเจกต์:** ทำ Score Dashboard ต่อให้เสร็จ + Deploy บน GitHub Pages
+- **โปรเจกต์:** ทำต้นแบบ Core Interactive Web App ต่อให้เสร็จ + Deploy บน GitHub Pages หรือ Vercel
 - **CSS:** Responsive Design เบื้องต้น `@media query`
-- **Git:** `git branch` + `git push` คล่อง
+- **Git:** Feature Branch Workflow + Pull Request (PR) จริงบน GitHub
 
 ### Buffer ปิดเทอม (31 ต.ค. – 1 พ.ย.)
 - ถ้า Score Dashboard ยังไม่เสร็จ → ทำให้จบก่อนเปิดเทอม
@@ -132,8 +134,8 @@
 - **DS Bonus:** ถ้าเรียน Linked List → ลองสร้าง Node interface ใน TS
 
 ### สัปดาห์ที่ 7 (23–29 พ.ย.)
-- **โปรเจกต์:** Expense Tracker ให้เสร็จ + Deploy
-- **Git:** `git branch`, `git merge`, workflow จริง
+- **โปรเจกต์:** Core Interactive Web App ให้เสร็จสมบูรณ์ (Logic ซับซ้อน + Local Storage + สถาปัตยกรรม Clean Code) + Deploy Production
+- **Git:** Git Tags / Releases + ตรวจสอบ Git Commit History ให้เป็นระเบียบพร้อมแสดงใน Portfolio
 
 ### 🟡 สัปดาห์ที่ 8 (30 พ.ย. – 6 ธ.ค.) — Buffer
 - ทำสิ่งที่ค้างให้จบก่อนเข้าช่วงเตรียมสอบ
@@ -188,12 +190,11 @@
 | # | Checkpoint | เกณฑ์ผ่าน | เป้าหมายวันที่ |
 |:-:|:-----------|:----------|:-------------:|
 | 1 | TS Intermediate | reduce, Generics, Error Handling, Utility Types สม่ำเสมอ | ต.ค. 2569 |
-| 2 | Git ใช้เป็น | GitHub มี commit history จริง | ต.ค. 2569 |
+| 2 | Git & GitHub | ใช้งานจริงในชีวิตประจำวัน (commit, push, branch, repo clean) | ✅ ปลดล็อกแล้ว (ก.ย. 2569) |
 | 3 | CSS Layout คล่อง | Flexbox + Grid + Responsive ได้โดยไม่ Google ทุกบรรทัด | พ.ย. 2569 |
-| 4 | โปรเจกต์แรก Deploy | Score Dashboard บน GitHub Pages | ต.ค. 2569 |
-| 5 | โปรเจกต์ที่สอง Deploy | Expense Tracker ออนไลน์ | พ.ย.–ธ.ค. 2569 |
-| 6 | Portfolio ออนไลน์ | หน้าเว็บโชว์ตัวเองได้จริง | ก.พ. 2570 |
-| 🎯 | **Intermediate Developer เต็มตัว** | **ผ่านครบทุก Checkpoint** | **มี.ค. 2570** |
+| 4 | Interactive Web App (Core) Deploy | 1 โปรเจกต์แก้ปัญหาจริง (Logic ซับซ้อน + Local Storage + สถาปัตยกรรม Clean Code) ออนไลน์ | พ.ย. 2569 |
+| 5 | Portfolio ออนไลน์ | หน้าเว็บโชว์ตัวเองและโปรเจกต์จริง Deploy เรียบร้อย | ก.พ. 2570 |
+| 🎯 | **Intermediate Developer เต็มตัว** | **ผ่านครบทุก Checkpoint (มี 1 Web App แก้ปัญหาจริง + 1 Portfolio ออนไลน์)** | **มี.ค. 2570** |
 
 ---
 

@@ -71,21 +71,20 @@
   - เข้าใจความแตกต่างระหว่าง Monolithic vs Modular CSS ในการพัฒนาเว็บจริง
   - เรียนรู้เทคนิคการจัดการ CSS Architecture, Separation of Concerns และการรักษา Cascade Specificity โดยไม่ให้สไตล์พังหรือดีไซน์เพี้ยน
 
-### [2026-09-04] — บันทึกเนื้อหาประจำสัปดาห์ในคลาส CompPro & การปูพื้นฐานสู่ Data Structures (เทอม 2)
-**เนื้อหาวันที่3 แต่บันทึกวันที่4
-- **เนื้อหาหลักที่เรียนและฝึกฝนในคลาสสัปดาห์นี้:**
-  - **Naming Conventions:** การตั้งชื่อตัวแปรและฟังก์ชันแบบ `camelCase` ตามมาตรฐานสากล
-  - **Data Types & Type System:** การระบุชนิดข้อมูลพื้นฐานอย่างแม่นยำ ป้องกันบั๊กตั้งแต่ตอนคอมไพล์
-  - **Type Aliases & Enums (`type` / `enum`):** การสร้างประเภทข้อมูลกำหนดเอง และการใช้ Enum เพื่อจัดการชุดค่าคงที่ที่แน่นอน
-  - **Conditional Logic:** การควบคุมเงื่อนไขและการตัดสินใจของโปรแกรมด้วย `if / else`
-  - **Collections & Traversal:** โครงสร้างข้อมูล `Array` และการเขียน `loop` ดึงสมาชิกใน Array ออกมาแสดงผลและประมวลผล
-  - **Modular Architecture:** การแยกโค้ดเป็นหลายไฟล์และการเชื่อมโยงการทำงานผ่าน `export / import`
-- **เนื้อหาเกริ่นนำเพื่อเตรียมความพร้อมสู่ Data Structures (เทอม 2):**
-  - **Object-Oriented Programming (`class`):** แม่แบบในการสร้าง Object สำหรับต่อยอดสู่โครงสร้างข้อมูลเชิงลึก (เช่น Node, Linked List, Stack, Queue)
-  - **Arrow Functions (`() => {}`):** ไวยากรณ์ฟังก์ชันยุคใหม่ที่มีความกระชับและใช้เป็น Callback ในโครงสร้างข้อมูล
-  - **Closures (โค้ชเชอร์):** กลไกการจำ Scope ของฟังก์ชัน (Lexical Environment) สำหรับการซ่อนข้อมูล (Encapsulation) และ Data State Management
-  - **Built-in Functions:** ฟังก์ชันมาตรฐานที่ภาษามีให้ใช้งาน (เช่น Array methods, String methods, Math) เพื่อนำมาประยุกต์ใช้ลดความซ้ำซ้อน
-  - **Imperative Programming:** การเขียนโค้ดสั่งงานแบบระบุคำสั่งทีละขั้นตอน (How to do) เพื่อสร้างพื้นฐานความเข้าใจการทำงานของหน่วยความจำและ CPU ก่อนขยับไปสู่การวิเคราะห์อัลกอริทึมและ Big-O ในเทอมถัดไป
+### [2026-09-03] — คลาส Computer Programming (CP 03-09): รากฐาน OOP, Functional Syntax, และการสร้าง Terminal UI ด้วย OpenTUI + SolidJS
+- **บันทึกเนื้อหาการเรียนรู้ประจำสัปดาห์ (ดูโค้ดตัวอย่างได้ที่ [typescript/03-classwork-cp/03-09/](file:///home/kxitta/lernTs/typescript/03-classwork-cp/03-09/)):**
+  - **1. Class (Object-Oriented Programming):** แม่แบบหรือพิมพ์เขียว (Blueprint) ในการสร้าง Object ประกอบด้วย `constructor`, Properties และ Methods พร้อมการควบคุมการเข้าถึงด้วย `public` / `private` เพื่อปูทางสู่การสร้าง Data Structures (เช่น Node, LinkedList, Stack, Queue)
+  - **2. Arrow Function (`() => {}`):** ไวยากรณ์ฟังก์ชันลูกศรสมัยใหม่ พร้อมการคืนค่าอัตโนมัติ (Implicit Return), การคืนค่า Object Literal ด้วย `(...) => ({ ... })` และคุณสมบัติ Lexical `this`
+  - **3. Closure (โคลเชอร์):** กลไกที่ฟังก์ชันภายในจดจำตัวแปรใน Lexical Scope ของฟังก์ชันภายนอกได้แม้ฟังก์ชันนอกจะทำงานเสร็จแล้ว ใช้สำหรับ Data Encapsulation (Private State) และ Function Factory
+  - **4. Built-in Functions:** การใช้งานฟังก์ชันมาตรฐานที่ระบบเตรียมไว้ให้ เช่น Array Methods (`.filter()`, `.map()`, `.reduce()`, `.slice()`), String Methods (`.trim()`, `.split()`), และ Math Utilities (`Math.max()`, `Math.floor()`)
+  - **5. Imperative Programming:** กระบวนทัศน์การสั่งงานแบบกำหนดขั้นตอนทีละก้าว (How to do) ด้วยการควบคุม Loop และ State สะสมด้วยตนเอง เปรียบเทียบกับ Declarative Programming (Data Transformation)
+  - **6. OpenTUI + SolidJS (Terminal UI Architecture):** การสร้างหน้าจอโต้ตอบในเทอร์มินัล (TUI) ด้วยแนวคิด Reactive Component แบบ SolidJS
+  - **7. Lifecycle Hooks (`onMount` & `onCleanup`):**
+    - `onMount`: ทำงาน 1 ครั้งทันทีเมื่อ Component ถูก Mount (วาดขึ้นบน Terminal สำเร็จ) เพื่อจอง Event / Timer / Fetch ข้อมูล
+    - `onCleanup` (onclear): ทำงานเมื่อ Component ถูก Unmount (ปิดตัวลง) เพื่อเคลียร์ Timer และคืน Memory ป้องกัน Memory Leak
+  - **8. Developer Habit: การอ่าน Official Documentation:** ฝึกฝนการเปิดอ่านคู่มือทางการของไลบรารี เพื่อเข้าใจ API Reference และ Lifecycle แทนการจำโค้ด
+
+
 
 ### [2026-09-04] — Major Redesign v2.0 ➔ v2.1.5: สถาปัตยกรรม Pure Monochrome, คลังโจทย์ 32 ข้อ, SVG Alpha Favicon & Vibe Coding Workflow
 - **Major Redesign v2.0 (Lean Architecture & High Performance):**

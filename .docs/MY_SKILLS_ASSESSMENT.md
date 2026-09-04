@@ -4,7 +4,7 @@
 > **สภาพแวดล้อม:** WSL + Bun + VSCode  
 > **เริ่มเรียน TS จริงจัง:** ~23–24 มิถุนายน 2026  
 > **ระยะเวลาเรียน ณ วันประเมิน:** ~10 สัปดาห์ (2 เดือน +)  
-> **เป้าหมายสูงสุด:** สร้าง Production-level Web App และสร้าง Portfolio ส่วนตัว  
+> **เป้าหมาย:** สร้าง Interactive Web App 1 โปรเจกต์ที่แก้ปัญหาจริง (มี Logic ซับซ้อน + Local Storage + สถาปัตยกรรม Clean Code) และสร้าง Portfolio ออนไลน์  
 > **สแกนโค้ดครบ 100%:** 2 กันยายน 2026  
 > *(อ่านครบทุกโฟลเดอร์: `function/`, `toeiA1/`, `cptry/`, `someMiniProject/`, `student_society_v0.1/`, `my-Trainning/`, `lern.forloop/`, `lern.if else/`, `CP/` ทุกโฟลเดอร์)*
 
@@ -40,6 +40,7 @@
 | **Error Handling (`try/catch`)** | 🔴 ยังไม่ได้เรียน | 1.5/5 | ยังไม่มีในโค้ดทั้งหมด |
 | **Unit Testing** | 🟡 เคยสัมผัส | 2/5 | มีไฟล์ `text-util.test.ts` ใน `CP/20-08` ซึ่งเป็นไฟล์ test จริง (ถ้าเป็นของคุณ แสดงว่าเคยลองเขียน test แล้ว!) |
 | **HTML & CSS Layout** | ⚠️ เริ่มต้น | 2/5 | ยังไม่เห็นในโปรเจกต์ |
+| **Git & Version Control** | ✅ ใช้งานจริงได้แล้ว | 3.5/5 | ใช้ `git init`, `add`, `commit`, `push`, จัดการ `.gitignore`, เชื่อมต่อ GitHub repo (`kxitta-road`, `myVibeWeb`) สำเร็จและเป็นระเบียบ |
 
 ---
 
