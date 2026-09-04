@@ -6,12 +6,17 @@
 
 ## 🗺️ แผนการและประวัติการเรียนรู้ (Documentation)
 
-เอกสารหลักเกี่ยวกับการวางแผนพัฒนาตนเองและการประเมินทักษะ:
+<details>
+<summary><strong>คลิกเพื่อเปิดดูเอกสาร Roadmap & ประวัติทั้งหมด</strong></summary>
 
-- [ROADMAP.md](docs/ROADMAP.md) — แผนที่การพัฒนาสู่ Intermediate Developer ตามปฏิทินจริง
-- [LEARNING_HISTORY.md](docs/LEARNING_HISTORY.md) — บันทึกประวัติและสรุปความก้าวหน้ารายวัน
-- [MY_SKILLS_ASSESSMENT.md](docs/MY_SKILLS_ASSESSMENT.md) — การประเมินจุดแข็งและสิ่งที่ต้องพัฒนาต่อ
-- [MY_AI_PROMPT.md](docs/MY_AI_PROMPT.md) — สรุปแนวทางการใช้ AI เป็นผู้ช่วยทบทวนโค้ด
+<br />
+
+- [ROADMAP.md](.docs/ROADMAP.md) — แผนที่การพัฒนาสู่ Intermediate Developer ตามปฏิทินจริง
+- [LEARNING_HISTORY.md](.docs/LEARNING_HISTORY.md) — บันทึกประวัติและสรุปความก้าวหน้ารายวัน
+- [MY_SKILLS_ASSESSMENT.md](.docs/MY_SKILLS_ASSESSMENT.md) — การประเมินจุดแข็งและสิ่งที่ต้องพัฒนาต่อ
+- [MY_AI_PROMPT.md](.docs/MY_AI_PROMPT.md) — สรุปแนวทางการใช้ AI เป็นผู้ช่วยทบทวนโค้ด
+
+</details>
 
 ---
 
@@ -19,7 +24,7 @@
 
 ```text
 .
-├── 📖 docs/                          # เอกสาร Roadmap, แผนการเรียน และประวัติรายวัน
+├── 📁 .docs/                         # (ซ่อน) เอกสาร Roadmap, แผนการเรียน และประวัติรายวัน
 │   ├── ROADMAP.md
 │   ├── LEARNING_HISTORY.md
 │   ├── MY_SKILLS_ASSESSMENT.md
