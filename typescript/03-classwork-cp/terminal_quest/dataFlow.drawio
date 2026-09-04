@@ -1,0 +1,113 @@
+<mxfile host="65bd71144e">
+    <diagram id="data-flow-pipeline" name="Function-Data-Pipeline">
+        <mxGraphModel dx="1400" dy="1800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="2000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+
+                <!-- TITLE -->
+                <mxCell id="title" value="&lt;b&gt;&lt;font size=&quot;5&quot; color=&quot;#003366&quot;&gt;🚰 แผนที่การส่งต่อข้อมูลระหว่างฟังก์ชัน (Function Pipeline &amp;amp; Data Flow)&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="20" width="700" height="40" as="geometry"/>
+                </mxCell>
+
+                <!-- STEP 1: prompt() -->
+                <mxCell id="f1" value="&lt;b&gt;&lt;font size=&quot;4&quot;&gt;1. prompt(&quot;Enter name: &quot;)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#555555&quot;&gt;ไฟล์: main.ts&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;b&gt;📥 รับเข้า:&lt;/b&gt; ตัวอักษรจากคีย์บอร์ด&lt;br&gt;&lt;b&gt;📤 ส่งออก:&lt;/b&gt; &lt;font color=&quot;#0066cc&quot;&gt;&lt;b&gt;playerName: string&lt;/b&gt;&lt;/font&gt; (&quot;Kxitta&quot;)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=14;align=left;spacingLeft=15;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="80" width="440" height="95" as="geometry"/>
+                </mxCell>
+
+                <!-- Arrow 1 -> 2 -->
+                <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#0066cc;" edge="1" parent="1" source="f1" target="f2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_a1" value="&lt;b&gt;&lt;font color=&quot;#0066cc&quot; size=&quot;3&quot;&gt;ส่ง playerName (&quot;Kxitta&quot;) + 100&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="a1">
+                    <mxGeometry x="-0.2" y="2" relative="1" as="geometry">
+                        <mxPoint x="110" y="2" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- STEP 2: createPlayer -->
+                <mxCell id="f2" value="&lt;b&gt;&lt;font size=&quot;4&quot;&gt;2. createPlayer(name, maxHp)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#555555&quot;&gt;ไฟล์: charector.ts&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;b&gt;📥 รับเข้า:&lt;/b&gt; name: string, maxHp: number&lt;br&gt;&lt;b&gt;📤 ส่งออก:&lt;/b&gt; &lt;font color=&quot;#0066cc&quot;&gt;&lt;b&gt;player: Player&lt;/b&gt;&lt;/font&gt; { name, hp:100, gold:1500, currentMap: SYNTAXIA }" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=14;align=left;spacingLeft=15;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="230" width="440" height="105" as="geometry"/>
+                </mxCell>
+
+                <!-- Arrow 2 -> 3 -->
+                <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#008800;" edge="1" parent="1" source="f2" target="f3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_a2" value="&lt;b&gt;&lt;font color=&quot;#008800&quot; size=&quot;3&quot;&gt;ส่งกล่อง player ทั้งก้อน&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="a2">
+                    <mxGeometry x="-0.2" y="2" relative="1" as="geometry">
+                        <mxPoint x="85" y="2" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- STEP 3: runTerminalQuest -->
+                <mxCell id="f3" value="&lt;b&gt;&lt;font size=&quot;4&quot;&gt;3. runTerminalQuest(player)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#555555&quot;&gt;ไฟล์: terminal-quest.ts (ตัวคุม Loop หลัก)&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;b&gt;📥 รับเข้า:&lt;/b&gt; player: Player&lt;br&gt;&lt;b&gt;⚙️ การทำงาน:&lt;/b&gt; ดึง map = player.currentMap แล้วส่งต่อให้ฟังก์ชันย่อย 3 ตัวด้านล่าง" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=14;align=left;spacingLeft=15;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="390" width="440" height="105" as="geometry"/>
+                </mxCell>
+
+                <!-- SUB-PIPELINE (Inside Loop) -->
+
+                <!-- Arrow 3 -> 4A -->
+                <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9673a6;" edge="1" parent="1" source="f3" target="f4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_a3" value="&lt;b&gt;ส่ง (map, player)&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="a3">
+                    <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+                        <mxPoint x="60" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- STEP 4A: printMapInterface -->
+                <mxCell id="f4" value="&lt;b&gt;&lt;font size=&quot;4&quot;&gt;4. printMapInterface(map, player)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#555555&quot;&gt;ไฟล์: map-interface.ts&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;b&gt;📥 รับเข้า:&lt;/b&gt; map: Map, player: Player&lt;br&gt;&lt;b&gt;📤 ส่งออก:&lt;/b&gt; &lt;font color=&quot;#666666&quot;&gt;void&lt;/font&gt; (แค่วาดรูปหน้าจอลง Terminal ไม่ได้คืนค่าอะไร)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=14;align=left;spacingLeft=15;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="540" width="440" height="95" as="geometry"/>
+                </mxCell>
+
+                <!-- Arrow 4A -> 4B -->
+                <mxCell id="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#9673a6;" edge="1" parent="1" source="f4" target="f5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_a4" value="&lt;b&gt;เรียกรับคำสั่งต่อ&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;" vertex="1" connectable="0" parent="a4">
+                    <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+                        <mxPoint x="50" y="1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- STEP 4B: getMapInput -->
+                <mxCell id="f5" value="&lt;b&gt;&lt;font size=&quot;4&quot;&gt;5. getMapInput(map, player)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#555555&quot;&gt;ไฟล์: user-input.ts&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;b&gt;📥 รับเข้า:&lt;/b&gt; map: Map, player: Player&lt;br&gt;&lt;b&gt;⚙️ ทำงาน:&lt;/b&gt; รับเลข &quot;1&quot; ➡️ แปลงเป็น Key &quot;GOTO_HOTEL&quot;&lt;br&gt;&lt;b&gt;📤 ส่งออก:&lt;/b&gt; &lt;font color=&quot;#cc0066&quot;&gt;&lt;b&gt;userInput: string&lt;/b&gt;&lt;/font&gt; (&quot;GOTO_HOTEL&quot;)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=14;align=left;spacingLeft=15;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="680" width="440" height="110" as="geometry"/>
+                </mxCell>
+
+                <!-- Arrow 4B -> 4C -->
+                <mxCell id="a5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#cc0066;" edge="1" parent="1" source="f5" target="f6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_a5" value="&lt;b&gt;&lt;font color=&quot;#cc0066&quot; size=&quot;3&quot;&gt;ส่ง userInput (&quot;GOTO_HOTEL&quot;) + กล่อง player&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="a5">
+                    <mxGeometry x="-0.2" y="2" relative="1" as="geometry">
+                        <mxPoint x="145" y="2" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+
+                <!-- STEP 4C: Action Handlers -->
+                <mxCell id="f6" value="&lt;b&gt;&lt;font size=&quot;4&quot;&gt;6. localHostTownAction(userInput, player)&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#555555&quot;&gt;ไฟล์: action-localHostTown.ts (หรือ action-syntaxia.ts)&lt;/font&gt;&lt;br&gt;&lt;hr&gt;&lt;b&gt;📥 รับเข้า:&lt;/b&gt; key: string (&quot;GOTO_HOTEL&quot;), player: Player&lt;br&gt;&lt;b&gt;💥 ผ่าตัดแก้ค่าในกล่อง player ทันที:&lt;/b&gt;&lt;br&gt;• player.hp = 100&lt;br&gt;• player.gold -= 100&lt;br&gt;• player.latestAction = &quot;คุณได้พักผ่อนที่โรงแรม...&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=14;align=left;spacingLeft=15;" vertex="1" parent="1">
+                    <mxGeometry x="380" y="850" width="440" height="135" as="geometry"/>
+                </mxCell>
+
+                <!-- Arrow 4C -> Loop Back to runTerminalQuest -->
+                <mxCell id="a6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=4;strokeColor=#ff6600;" edge="1" parent="1" source="f6" target="f3">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="920" y="918"/>
+                            <mxPoint x="920" y="443"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_a6" value="&lt;b&gt;&lt;font color=&quot;#ff6600&quot; size=&quot;3&quot;&gt;🔄 ส่งกล่อง player (ที่อัปเดตค่าแล้ว) วนลูปกลับไปเริ่มรอบใหม่&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontColor=#ff6600;" vertex="1" connectable="0" parent="a6">
+                    <mxGeometry x="-0.1" y="2" relative="1" as="geometry">
+                        <mxPoint x="110" y="5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

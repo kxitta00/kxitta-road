@@ -1,0 +1,14 @@
+{
+  "name": "com",
+  "hp": 100,
+  "maxHp": 120,
+  "atk": 3,
+  "matk": 3,
+  "def": 3,
+  "mdef": 3,
+  "exp": 0,
+  "gold": 600,
+  "action": "explore",
+  "currentMap": "Localhost Town",
+  "latestAction": "คุณเลือก: save/load เกม (บันทึก/โหลดเกม)"
+}

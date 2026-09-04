@@ -1,0 +1,23 @@
+[
+  {
+    "studentId": "STD-01",
+    "fullName": "SOMCHAI PRASERT SCI",
+    "score": 85,
+    "status": "PASS",
+    "isPassed": true
+  },
+  {
+    "studentId": "STD-02",
+    "fullName": "JOHN DOE ART",
+    "score": 45,
+    "status": "FAIL",
+    "isPassed": false
+  },
+  {
+    "studentId": "STD-03",
+    "fullName": "ANNA LEE",
+    "score": null,
+    "status": "UNKNOWN",
+    "isPassed": false
+  }
+]

@@ -1,0 +1,156 @@
+<mxfile host="65bd71144e">
+    <diagram id="-UypyWzhnyc9ekHj3reZ" name="Page-1">
+        <mxGraphModel dx="682" dy="541" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="2200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;b&gt;[ main.ts ]&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;4&quot;&gt;🏁 START&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="30" width="220" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="2" target="3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;b&gt;[ main.ts ]&lt;/b&gt;&lt;br&gt;playerName = prompt(&quot;Enter name: &quot;)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="140" width="300" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="3" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;b&gt;[ charector.ts ]&lt;/b&gt;&lt;br&gt;player = createPlayer(playerName, 100)&lt;br&gt;&lt;font color=&quot;#333333&quot; size=&quot;2&quot;&gt;(HP: 100/100, Gold: 1500G, Map: SYNTAXIA)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="250" width="360" height="85" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="4" target="5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;b&gt;[ main.ts ➡️ terminal-quest.ts ]&lt;/b&gt;&lt;br&gt;runTerminalQuest(player)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="375" width="300" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="5" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;b&gt;[ terminal-quest.ts ]&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;4&quot; color=&quot;#b85450&quot;&gt;&lt;b&gt;player.hp &amp;gt; 0 ?&lt;/b&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="375" y="485" width="270" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#b85450;" parent="1" source="6" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_no" value="&lt;b&gt;&lt;font color=&quot;#cc0000&quot; size=&quot;3&quot;&gt;NO (เลือดหมด)&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;fontColor=#cc0000;" parent="e5" vertex="1" connectable="0">
+                    <mxGeometry x="-0.15" y="2" relative="1" as="geometry">
+                        <mxPoint x="-10" y="-18" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="&lt;b&gt;💀 Game Over!&lt;/b&gt;&lt;br&gt;ผู้เล่นพลังชีวิตหมด" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="515" width="200" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#b85450;" parent="1" source="8" target="9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;b&gt;🛑 END&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="625" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#388e3c;" parent="1" source="6" target="11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_yes" value="&lt;b&gt;&lt;font color=&quot;#008800&quot; size=&quot;3&quot;&gt;YES (ยังมีชีวิต)&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="e7" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+                        <mxPoint x="55" y="5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="&lt;b&gt;[ terminal-quest.ts ]&lt;/b&gt;&lt;br&gt;1. console.clear()&lt;br&gt;2. โชว์ &lt;b&gt;player.latestAction&lt;/b&gt; (ถ้ามีข้อความ)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="345" y="660" width="330" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="11" target="12" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;b&gt;[ map-interface.ts ]&lt;/b&gt;&lt;br&gt;printMapInterface(map, player)&lt;br&gt;&lt;font color=&quot;#333333&quot; size=&quot;2&quot;&gt;(วาดกรอบแผนที่, HP, ATK, DEF, Gold, เมนู 1,2,3)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="780" width="360" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="12" target="13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;b&gt;[ user-input.ts ]&lt;/b&gt;&lt;br&gt;userInput = getMapInput(map, player)&lt;br&gt;&lt;font color=&quot;#333333&quot; size=&quot;2&quot;&gt;(รับปุ่ม 1,2,3 ➡️ แปลงเป็น Enum Key เช่น &quot;GOTO_HOTEL&quot;)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=15;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="900" width="380" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="13" target="14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&lt;b&gt;[ terminal-quest.ts ]&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;4&quot;&gt;&lt;b&gt;switch (player.currentMap)&lt;/b&gt;&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="1020" width="300" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;b&gt;[ action-syntaxia.ts ]&lt;/b&gt;&lt;br&gt;&lt;b&gt;syntaxiaAction(...)&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;2&quot;&gt;• เปลี่ยน map ไป Localhost&lt;br&gt;• เปลี่ยน map ไป Forest&lt;br&gt;• เปลี่ยน map ไป Fortress&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="1230" width="240" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_syn" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="14" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_syn" value="&lt;b&gt;&lt;font size=&quot;3&quot; color=&quot;#0044aa&quot;&gt;SYNTAXIA&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontColor=#0044aa;" parent="e_syn" vertex="1" connectable="0">
+                    <mxGeometry x="-0.3" y="1" relative="1" as="geometry">
+                        <mxPoint x="-20" y="-15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="&lt;b&gt;[ action-localHostTown.ts ]&lt;/b&gt;&lt;br&gt;&lt;b&gt;localHostTownAction(...)&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;2&quot;&gt;• โรงแรม: ฮีล HP 100, -100G&lt;br&gt;• โรงยิม: อัป Stat, -EXP/Gold&lt;br&gt;• กลับ Syntaxia&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="1230" width="240" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_town" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="14" target="16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_town" value="&lt;b&gt;&lt;font size=&quot;3&quot; color=&quot;#0044aa&quot;&gt;LOCALHOST_TOWN&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontColor=#0044aa;" parent="e_town" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+                        <mxPoint x="-57" y="10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="&lt;b&gt;[ Infinite Loop Forest ]&lt;/b&gt;&lt;br&gt;&lt;b&gt;ป่ามอนสเตอร์&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;2&quot;&gt;• สู้ Monster: +EXP, +Gold, -HP&lt;br&gt;• กลับ Syntaxia&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="1230" width="240" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_forest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#333333;fillColor=#FFFFFF;" parent="1" source="14" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_forest" value="&lt;b&gt;&lt;font size=&quot;3&quot; color=&quot;#0044aa&quot;&gt;INFINITE_LOOP_FOREST&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontColor=#0044aa;" parent="e_forest" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+                        <mxPoint x="62" y="10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="&lt;b&gt;[ The Null Fortress ]&lt;/b&gt;&lt;br&gt;&lt;b&gt;ปราสาทบอสใหญ่&lt;/b&gt;&lt;br&gt;&lt;font size=&quot;2&quot;&gt;• สู้ Null Pointer: ชนะเกม / เสีย HP&lt;br&gt;• กลับ Syntaxia&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="1230" width="240" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_fortress" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#333333;" parent="1" source="14" target="18" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_fortress" value="&lt;b&gt;&lt;font size=&quot;3&quot; color=&quot;#0044aa&quot;&gt;NULL_FORTRESS&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;fontColor=#0044aa;" parent="e_fortress" vertex="1" connectable="0">
+                    <mxGeometry x="-0.3" y="1" relative="1" as="geometry">
+                        <mxPoint x="20" y="-15" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_back_syn" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=3;strokeColor=#0066cc;" parent="1" source="15" target="6" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="1380"/>
+                            <mxPoint x="1100" y="1380"/>
+                            <mxPoint x="1100" y="550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_loop" value="&lt;b&gt;&lt;font color=&quot;#0066cc&quot; size=&quot;4&quot;&gt;🔄 วนลูปกลับไปเช็ค player.hp &amp;gt; 0&lt;/font&gt;&lt;/b&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;fontColor=#0066cc;" parent="e_back_syn" vertex="1" connectable="0">
+                    <mxGeometry x="-0.45" relative="1" as="geometry">
+                        <mxPoint x="120" y="-20" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_back_town" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;strokeColor=#0066cc;" parent="1" source="16" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="400" y="1380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_back_forest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;strokeColor=#0066cc;" parent="1" source="17" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="1380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_back_boss" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=3;strokeColor=#0066cc;" parent="1" source="18" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="940" y="1380" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
