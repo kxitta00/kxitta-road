@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Box Model Foundation — Kxitta</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="page-title">CSS Box Model & Units</h1>
+      <p class="subtitle">สัปดาห์ที่ 1: รากฐานการจัดสัดส่วนและระยะห่างบนหน้าเว็บ</p>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <!-- ส่วนที่ 1: ไดอะแกรมจำลอง Box Model จริง -->
+    <section class="section-card">
+      <h2 class="section-heading">1. แผนผังจำลอง Box Model (จากนอกเข้าใน)</h2>
+      <p class="section-desc">สังเกต 4 ระดับชั้น: Margin (นอกสุด) &rarr; Border &rarr; Padding &rarr; Content (ในสุด)</p>
+      
+      <div class="box-model-visual">
+        <div class="layer-margin">
+          <span class="layer-label">MARGIN (ระยะห่างภายนอก)</span>
+          <div class="layer-border">
+            <span class="layer-label">BORDER (เส้นขอบ)</span>
+            <div class="layer-padding">
+              <span class="layer-label">PADDING (ระยะห่างภายใน)</span>
+              <div class="layer-content">
+                <span class="content-title">CONTENT</span>
+                <span class="content-size">width: 280px &times; height: 100px</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ส่วนที่ 2: การเปรียบเทียบการใช้งานจริงกับ Component Card -->
+    <section class="section-card">
+      <h2 class="section-heading">2. การประยุกต์ใช้กับ Card Component</h2>
+      <p class="section-desc">ลองเปิด DevTools (กด F12 หรือคลิกขวา &gt; Inspect) เพื่อดู Box Model จริงในแท็บ Computed</p>
+
+      <div class="demo-grid">
+        <article class="sample-card">
+          <div class="card-badge">Badge Label</div>
+          <h3 class="card-title">Interactive Card ตัวอย่าง</h3>
+          <p class="card-body">
+            การกำหนด padding และ margin ให้เหมาะสม เป็นหัวใจสำคัญที่ทำให้หน้าเว็บดูเป็นมืออาชีพ มีพื้นที่หายใจ (White Space) สบายตา
+          </p>
+          <div class="card-footer">
+            <span class="metric">Padding: 1.5rem</span>
+            <span class="metric">Border: 1px</span>
+            <span class="metric">Radius: 8px</span>
+          </div>
+        </article>
+
+        <article class="sample-card">
+          <div class="card-badge badge-accent">Unit Comparison</div>
+          <h3 class="card-title">หน่วยวัดที่ใช้บ่อยใน CSS</h3>
+          <ul class="unit-list">
+            <li><strong>px (Pixel):</strong> ค่าคงที่ เหมาะกับขอบเส้นบางๆ หรือไอคอนขนาดตายตัว</li>
+            <li><strong>rem (Root EM):</strong> ยืดหยุ่นตามฟอนต์หลักของบราวเซอร์ นิยมใช้กับ padding, margin และ font-size</li>
+            <li><strong>% (Percentage):</strong> ยืดหดตามขนาดของ Container แม่ เหมาะกับการทำ Responsive</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Workspace: <code>html-css/01-box-model/</code> &mdash; สัปดาห์ที่ 1 Personal Roadmap</p>
+    </div>
+  </footer>
+
+</body>
+</html>
