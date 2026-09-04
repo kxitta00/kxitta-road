@@ -32,7 +32,7 @@
 │
 ├── 🟦 typescript/                    # แหล่งรวมการฝึกฝนภาษา TypeScript
 │   ├── 01-basics/                    # พื้นฐานตัวแปร, if-else, for-loop, training
-│   ├── 02-business-logic/            # แบบฝึกหัดแก้ปัญหาเชิงตรรกะ (โจทย์ 00–54 พร้อม Flowchart)
+│   ├── 02-business-logic/            # แบบฝึกหัดแก้ปัญหาเชิงตรรกะ (โจทย์ 00–54 (พร้อม Flowchart ในบางข้อ))
 │   ├── 03-classwork-cp/              # งานประจำสัปดาห์ในคลาส Computer Programming
 │   └── 04-daily-practice/           # พื้นที่ฝึกโจทย์ประจำวัน (Daily Challenges)
 │
