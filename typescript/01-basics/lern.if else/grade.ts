@@ -2,21 +2,22 @@
 
 //  การสร้างฟังก์ชัน ชื่อ calculateGrade ให้พารามิเตอร์ score เก็บตัวเลข และส่งผลลัพธ์กลับออกมาเป็นข้อความ (เกรด)
 function calculateGrade(score: number): string {
-    if (score > 100 || score < 0) { // if ถ้าตัวเลขใน score มากกว่า 100 หรือน้อยกว่า 100 ให้แสดงผลลัพธ์เป็นข้อความว่า...
+    if (score > 100 || score < 0) { //ลืมดักคะแนนถ้าเข้ามาน้อยกว่า 0 หรือมากกว่า 100
         return "คะแนนไม่ถูกต้อง! กรุณากรอกใหม่";
-    } else if (score >= 80) { //แต่ถ้าไม่ใช่เงื่อนไขแรก แต่ตัวเลขใน score มีค่ามากกว่าหรือเท่ากับ 80 ให้ส่งผลลัพธ์ออกมาเป็น...
+    } else if (score >= 80) {  //เราไม่ต้องใส่ && 
         return "A";
-    } else if (score >= 75) {
+    } else if (score >= 75) { // 75 -> 79
         return "B+";
-    } else if (score >= 70) {
+    } else if (score >= 70) { // 70 -> 74
         return "B";
-    } else if (score >= 65) {
+    } else if (score >= 65) { // 65-> 69
         return "C+";
-    } else if (score >= 60) {
+    } else if (score >= 60) { // 60 -> 64
         return "C";
-    } else if (score >= 50) {
+    } else if (score >= 50) { // 50 -> 59
         return "D";
-    } else { //ถ้าไม่เข้าเงื่อนไขไหนเลยให้แสดงผลเป็น f
+    } else {                //ถ้าคะแนนน้อยกว่า 50
+        //หรือตั้งแต่ 49 ลงมา ->>
         return "F";
     }
 }

@@ -151,48 +151,130 @@
 // console.log(getFeaturedProducts(products));
 
 //6.
-const rawTransactions: string[] = [
-  "TXN-101,2026-09-01,TRANSFER,50000,SUCCESS",
-  "TXN-102,2026-09-01,PAYMENT,450,SUCCESS",
-  "TXN-103,2026-09-02,TRANSFER,120000,SUCCESS",
-  "TXN-104,2026-09-02,WITHDRAW,5000,FAILED",
-  "TXN-105,2026-09-03,TRANSFER,85000,SUCCESS",
-  "TXN-106,2026-09-03,PAYMENT,20000,SUCCESS",
-  "TXN-107,2026-09-04,TRANSFER,3000,SUCCESS",
-];
+// const rawTransactions: string[] = [
+//   "TXN-101,2026-09-01,TRANSFER,50000,SUCCESS",
+//   "TXN-102,2026-09-01,PAYMENT,450,SUCCESS",
+//   "TXN-103,2026-09-02,TRANSFER,120000,SUCCESS",
+//   "TXN-104,2026-09-02,WITHDRAW,5000,FAILED",
+//   "TXN-105,2026-09-03,TRANSFER,85000,SUCCESS",
+//   "TXN-106,2026-09-03,PAYMENT,20000,SUCCESS",
+//   "TXN-107,2026-09-04,TRANSFER,3000,SUCCESS",
+// ];
 
-type Transaction = {
-  txnId: string;
-  date: string;
-  type: string;
-  amount: number; // สังเกต: ต้องแปลงจาก string เป็น number
-  status: string;
-};
+// type Transaction = {
+//   txnId: string;
+//   date: string;
+//   type: string;
+//   amount: number; // สังเกต: ต้องแปลงจาก string เป็น number
+//   status: string;
+// };
 
-type HighValueAlert = {
-  alertTitle: string; // เช่น "[ALERT] TXN-101: TRANSFER"
-  amount: number;
-  riskLevel: "HIGH" | "CRITICAL"; // ถ้า amount >= 100,000 ให้เป็น "CRITICAL" นอกนั้น "HIGH"
-};
+// type HighValueAlert = {
+//   alertTitle: string; // เช่น "[ALERT] TXN-101: TRANSFER"
+//   amount: number;
+//   riskLevel: "HIGH" | "CRITICAL"; // ถ้า amount >= 100,000 ให้เป็น "CRITICAL" นอกนั้น "HIGH"
+// };
 
-function auditTransactions(rawLogs: string[]): HighValueAlert[] {
-  const parts: string[][] = rawLogs.map((a) => a.split(","));
-  const audit: Transaction[] = parts.map((p) => ({
-    txnId: p[0] ?? "",
-    date: p[1] ?? "",
-    type: p[2] ?? "",
-    amount: Number(p[3] ?? 0),
-    status: p[4] ?? "",
-  }));
+// function auditTransactions(rawLogs: string[]): HighValueAlert[] {
+//   const parts: string[][] = rawLogs.map((a) => a.split(","));
+//   const audit: Transaction[] = parts.map((p) => ({
+//     txnId: p[0] ?? "",
+//     date: p[1] ?? "",
+//     type: p[2] ?? "",
+//     amount: Number(p[3] ?? 0),
+//     status: p[4] ?? "",
+//   }));
 
-  return audit
-    .filter((item) => item.type === "TRANSFER" && item.status === "SUCCESS" && item.amount >= 50000)
-    .map((item) => ({
-      alertTitle: `[ALERT] ${item.txnId}: ${item.type}`,
-      amount: item.amount,
-      riskLevel: item.amount >= 100000 ? "CRITICAL" : "HIGH",
-    }))
+//   return audit
+//     .filter((item) => item.type === "TRANSFER" && item.status === "SUCCESS" && item.amount >= 50000)
+//     .map((item) => ({
+//       alertTitle: `[ALERT] ${item.txnId}: ${item.type}`,
+//       amount: item.amount,
+//       riskLevel: item.amount >= 100000 ? "CRITICAL" : "HIGH",
+//     }))
 
+// }
+
+// console.log(auditTransactions(rawTransactions));
+
+const rawData: string = " Somchai:85 , Somsri:-5 , Sombat:40 , Unknown:abc , Somying:102 , Somsak:75 , Nate:0 ";
+
+
+type score = number | string;
+
+type Student = {
+  name: string,
+  score: score,
 }
 
-console.log(auditTransactions(rawTransactions));
+type SumReport = {
+  totalStudentPass: string,
+  totalStudentfail: string,
+  totalBug: string,
+}
+
+function cleanData(rawDatas: string): Student[] {
+  let result: Student[] = [];
+  let parts: string[] = rawDatas.split(",")
+  for (const student of parts) {
+    let partsNameAndScore = student.split(":")
+    let name = partsNameAndScore[0]?.trim().toUpperCase() ?? "";
+    let score: score = (partsNameAndScore[1]) ?? "";
+
+    if (isNaN(Number(score))) {
+      score = "ข้อมูลผิดพลาด";
+    } else {
+      score = Number(score);
+    }
+    result.push({
+      name: name,
+      score: score,
+    })
+  }
+  return result
+}
+
+function gradeCalculate(students: Student[]): SumReport {
+
+  let gA: number = 0;
+  let gB: number = 0;
+  let gC: number = 0;
+  let gD: number = 0;
+  let gF: number = 0;
+  let failInfo: number = 0;
+  for (const item of students) {
+    let score: number = Number(item.score);
+    if (isNaN(score)) {
+      failInfo++
+      continue;
+    }
+
+    if (score < 0 || score > 100) {
+      failInfo++;
+      continue
+
+    }
+    if (score >= 80) {
+      gA++
+    } else if (score >= 70) {
+      gB++
+    } else if (score >= 60) {
+      gC++
+    } else if (score >= 50) {
+      gD++
+    } else {
+      gF++
+    }
+  }
+  return {
+    totalStudentPass: `สรุปจำนวนนักเรียนที่เกรด >> [A:${gA} คน] [B:${gB} คน] [C:${gC} คน] [D:${gD} คน]`,
+    totalStudentfail: `สรุปจำนวนคนที่สอบตก >> [F:${gF}] คน`,
+    totalBug: `จำนวนข้อมูลไม่ถูกต้อง ${failInfo} ข้อมูล`,
+  }
+}
+
+
+
+
+const cleanDatas: Student[] = cleanData(rawData);
+console.log(gradeCalculate(cleanDatas));
