@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09-09</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>test09-09</h1>
+  </header>
+
+  <main class="container">
+    <section class="input">
+      <textarea id="raw-input">
+LOG-101 | T-SHIRT | 5 | 250 | PAID
+LOG-102 | JEANS | -2 | 1200 | PAID
+LOG-103 | SNEAKERS | 1 | 2500 | PENDING
+LOG-104 | CAP | three | 350 | PAID
+LOG-105 | HOODIE | 2 | 890 | CANCELLED
+LOG-106 | SOCKS | 0 | 99 | PAID
+LOG-107 | BACKPACK | 1 | 1500 | PAID
+LOG-108 | T-SHIRT | 3 | 250 | REFUNDED
+LOG-109 | JACKET | 2 | -500 | PAID
+LOG-110 | BELT | 4 | 450 | PAID
+      </textarea>
+      <button id="btn-audit" type="button">ตรวจสอบข้อมูลคลังสินค้า</button>
+    </section>
+    <section class="stats">
+      <div>
+        <h3>บันทึกทั้งหมด</h3>
+        <p id="stat-total">-</p>
+      </div>
+      <div>
+        <h3>ข้อมูลถูกต้อง</h3>
+        <p id="stat-valid">-</p>
+      </div>
+      <div>
+        <h3>ข้อมูลเสียหาย</h3>
+        <p id="stat-corrupted">-</p>
+      </div>
+      <div>
+        <h3>ยอดขายสุทธิ</h3>
+        <p id="stat-revenue">-</p>
+      </div>
+    </section>
+    <section class="paid-orders">
+      <h2>รายการที่ชำระแล้ว</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>รหัสสินค้า</th>
+            <th>ชื่อสินค้า</th>
+            <th>จำนวน</th>
+            <th>ราคาต่อหน่วย</th>
+            <th>สถานะ</th>
+          </tr>
+        </thead>
+        <tbody id="orders-body">
+
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
