@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO-DO-APP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>TO-DO Management</h1>
+    <p>ระบบจัดการงานแบบเรียลไทม์</p>
+  </header>
+
+  <section class="kpi-grid">
+    <div class="kpi-card">
+      <p>Total Tasks</p>
+      <span id="kpi-total">0</span>
+    </div>
+    <div class="kpi-card">
+      <p>In-Progress</p>
+      <span id="kpi-progress">0</span>
+    </div>
+    <div class="kpi-card">
+      <p>Completed</p>
+      <span id="kpi-completed">0</span>
+    </div>
+    <div class="kpi-card">
+      <p>Completion Rate</p>
+      <span id="kpi-rate">0%</span>
+    </div>
+  </section>
+  <form id="task-form">
+    <input type="text" id="task-input" placeholder="พิมพ์ชื่องานที่ต้องการทำ..">
+    <select id="priority-select">
+      <option value="LOW">Low</option>
+      <option value="MEDIUM" selected>Medium</option>
+      <option value="HIGH">HIGH</option>
+    </select>
+    <button type="submit" id="add-task-btn">เพิ่มงาน</button>
+  </form>
+
+  <div class="toolbar">
+    <div class="filter-group">
+      <button type="button" class="filter-btn active" data-filter="ALL">ALL</button>
+      <button type="button" class="filter-btn" data-filter="TODO">To Do</button>
+      <button type="button" class="filter-btn" data-filter="IN_PROGRESS">In Progress</button>
+      <button type="button" class="filter-btn" data-filter="DONE">Done</button>
+    </div>
+
+    <button id="clear-completed-btn">Clear Completed</button>
+  </div>
+
+  <ul id="task-list">
+
+  </ul>
+  <script src="app.js" defer></script>
+</body>
+
+</html>
