@@ -2,6 +2,10 @@ import type { Priority, Status, Task, TaskState, TaskSummary } from "./types"
 import { createTask, updateStatus, deleteTask, filterByStatus, clearCompleted, getTaskSummary } from "./task-engine"
 import { loadTasks, saveTask } from "./storage"
 
+
+//todo ทำความเข้าใจไฟล์นี้ไล่ work flow ให้ 100% และ เรียนรู้ syntax ใหม่ๆ
+
+
 //จำว่าตอนนี้ทั้งระบบมีงานอะไรอยู่บ้าง (โหลดขึ้นมาจาก LocalStorage ทันทีที่เปิดเว็บ)
 let tasks: TaskState = loadTasks();
 //จำว่าตอนนี้สายตาผู้ใช้กำลังเลือกดูแท็บไหนอยู่ (ALL, TODO, IN_PROGRESS, DONE)
