@@ -1,414 +1,675 @@
 <mxfile host="65bd71144e">
-    <diagram id="echo_diagram" name="1. echo.ts">
-        <mxGraphModel dx="1631" dy="687" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+    <diagram id="diag_1" name="1. print-numbers.ts">
+        <mxGraphModel dx="1078" dy="412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="1920" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="info1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;filename:&lt;/b&gt; echo.ts&lt;br&gt;&lt;b&gt;*display&lt;/b&gt; = การแสดงผลผ่านหน้าจอ&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="650" y="70" width="300" height="60" as="geometry"/>
+                <mxCell id="p1_note" value="filename: print-numbers.ts&#10;* การประกาศตัวแปร ต้องกำหนด type ให้ชัดเจน&#10;เช่น const text: string = &quot;Hello World&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontColor=#2ecc71;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="70" width="380" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="test1" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;ตัวอย่างการทำงานโปรแกรม (Test Cases):&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 14px; font-family: monospace;&quot;&gt;1) echo(&quot;&quot;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: -&amp;gt;&lt;br&gt;&lt;br&gt;2) echo(&quot;hello&quot;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: system: hello&lt;br&gt;&lt;br&gt;3) echo(&quot;code squad&quot;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: system: code squad&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;strokeWidth=1;arcSize=10;" parent="1" vertex="1">
-                    <mxGeometry x="650" y="160" width="360" height="220" as="geometry"/>
+                <mxCell id="p1_testcases" value="&lt;b&gt;TEST CASES &amp;amp; MOCK DATA&lt;/b&gt;&lt;hr&gt;&lt;br&gt;&lt;b&gt;Case 1: ข้อมูลปกติ&lt;/b&gt;&lt;br&gt;Input: [10, 20, 30]&lt;br&gt;Expected Output:&lt;br&gt;  system: 10&lt;br&gt;  system: 20&lt;br&gt;  system: 30&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 2: ข้อมูลตัวเดียว&lt;/b&gt;&lt;br&gt;Input: [99]&lt;br&gt;Expected Output:&lt;br&gt;  system: 99&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 3: Array ว่าง (Edge Case)&lt;/b&gt;&lt;br&gt;Input: []&lt;br&gt;Expected Output:&lt;br&gt;  (ไม่มี output)&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 4: เลขศูนย์และเลขติดลบ&lt;/b&gt;&lt;br&gt;Input: [0, -5, 42]&lt;br&gt;Expected Output:&lt;br&gt;  system: 0&lt;br&gt;  system: -5&lt;br&gt;  system: 42" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#1e1e1e;strokeColor=#4a4a4a;fontColor=#ffffff;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;spacingRight=14;fontSize=12;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="870" y="70" width="300" height="470" as="geometry"/>
                 </mxCell>
-                <mxCell id="start1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;echo(str : string)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
-                    <mxGeometry x="310" y="70" width="220" height="60" as="geometry"/>
+                <mxCell id="p1_echo_note" value="*echo import มาจาก &quot;./echo&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontColor=#2ecc71;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="830" width="260" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="cond1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;str.length === 0 ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
-                    <mxGeometry x="325" y="180" width="190" height="130" as="geometry"/>
+                <mxCell id="p1_start" value="printNumbers(nums: number[])" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="80" width="240" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="edge_start" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="start1" target="cond1" edge="1">
+                <mxCell id="p1_init" value="index = 0&#10;num_length = nums.length" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="200" width="240" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1_loop" value="index &lt; num_length ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="330" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1_end" value="end" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="550" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1_decl" value="num: number | undefined" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="210" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1_assign" value="num = nums[ index ]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="330" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1_defined" value="num !== undefined ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="450" width="190" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1_str" value="numString: string = String(num)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=13;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="630" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1_echo" value="echo( numString )" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;strokeColor=#e74c3c;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="740" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p1_inc" value="index++" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="680" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p1_start" target="p1_init" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="box_no" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;system: &quot; + str&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="1" vertex="1">
-                    <mxGeometry x="110" y="370" width="220" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="edge_no" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" parent="1" source="cond1" target="box_no" edge="1">
+                <mxCell id="e1_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p1_init" target="p1_loop" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="label_no" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="edge_no" connectable="0" vertex="1">
+                <mxCell id="e1_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p1_loop" target="p1_end" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e1_3" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e1_3" vertex="1" connectable="0">
                     <mxGeometry x="-0.2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="box_yes" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;-&amp;gt;&quot;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="1" vertex="1">
-                    <mxGeometry x="420" y="370" width="180" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="edge_yes" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" parent="1" source="cond1" target="box_yes" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="label_yes" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="edge_yes" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="end1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;end&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="1" vertex="1">
-                    <mxGeometry x="335" y="500" width="130" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="edge_no_end" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="box_no" target="end1" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="edge_yes_end" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="1" source="box_yes" target="end1" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
-    <diagram id="sanitize_diagram" name="2. sanitize.ts">
-        <mxGraphModel dx="1167" dy="672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
-            <root>
-                <mxCell id="s0"/>
-                <mxCell id="s1" parent="s0"/>
-                <mxCell id="s_info" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;filename:&lt;/b&gt; sanitize.ts&lt;br&gt;&lt;b&gt;*display&lt;/b&gt; = การแสดงผลผ่านหน้าจอ&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="s1" vertex="1">
-                    <mxGeometry x="650" y="70" width="300" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_test" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;ตัวอย่างการทำงานโปรแกรม (Test Cases):&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 14px; font-family: monospace;&quot;&gt;1) sanitizeInput(&quot;   &quot;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: [ERROR] ข้อความว่างเปล่า&lt;br&gt;&lt;br&gt;2) sanitizeInput(&quot;ทำการบ้าน&quot;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: บันทึก: ทำการบ้าน&lt;br&gt;&lt;br&gt;3) sanitizeInput(&quot;  อ่านหนังสือ  &quot;)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: บันทึก: อ่านหนังสือ&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;strokeWidth=1;arcSize=10;" parent="s1" vertex="1">
-                    <mxGeometry x="650" y="160" width="360" height="240" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_start" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;sanitizeInput(text : string)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="s1" vertex="1">
-                    <mxGeometry x="295" y="70" width="250" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_cond" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;text.trim().length === 0 ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="s1" vertex="1">
-                    <mxGeometry x="310" y="180" width="220" height="140" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_edge_start" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="s1" source="s_start" target="s_cond" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_box_no" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;บันทึก: &quot; + text.trim()&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="s1" vertex="1">
-                    <mxGeometry x="90" y="380" width="230" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_edge_no" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" parent="s1" source="s_cond" target="s_box_no" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_label_no" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="s_edge_no" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="s_box_yes" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;[ERROR] ข้อความว่างเปล่า&quot;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="s1" vertex="1">
-                    <mxGeometry x="430" y="380" width="240" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_edge_yes" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" parent="s1" source="s_cond" target="s_box_yes" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_label_yes" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="s_edge_yes" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="s_end" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;end&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="s1" vertex="1">
-                    <mxGeometry x="355" y="510" width="130" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_edge_no_end" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="s1" source="s_box_no" target="s_end" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="s_edge_yes_end" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="s1" source="s_box_yes" target="s_end" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
-    <diagram id="atm_diagram" name="3. atm-withdraw.ts (Guard Clause)">
-        <mxGraphModel dx="2284" dy="962" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
-            <root>
-                <mxCell id="a0"/>
-                <mxCell id="a1" parent="a0"/>
-                <mxCell id="a_info" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;filename:&lt;/b&gt; atm-withdraw.ts&lt;br&gt;&lt;b&gt;*display&lt;/b&gt; = การแสดงผลผ่านหน้าจอ&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="a1" vertex="1">
-                    <mxGeometry x="780" y="50" width="300" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_test" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;ตัวอย่างการทำงานโปรแกรม (Test Cases):&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 14px; font-family: monospace;&quot;&gt;1) withdraw(1000, -50)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: [ERROR] ยอดเงินต้องมากกว่า 0&lt;br&gt;&lt;br&gt;2) withdraw(500, 1000)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: [ERROR] ยอดเงินในบัญชีไม่พอ&lt;br&gt;&lt;br&gt;3) withdraw(1000, 400)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: สำเร็จ คงเหลือ: 600&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;strokeWidth=1;arcSize=10;" parent="a1" vertex="1">
-                    <mxGeometry x="780" y="140" width="380" height="260" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_start" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;withdraw(balance : number, amount : number)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="a1" vertex="1">
-                    <mxGeometry x="200" y="50" width="380" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_cond1" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;amount &lt;= 0 ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="a1" vertex="1">
-                    <mxGeometry x="290" y="160" width="200" height="120" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_edge_start" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="a1" source="a_start" target="a_cond1" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_err1" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;[ERROR] ยอดเงินต้องมากกว่า 0&quot;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="a1" vertex="1">
-                    <mxGeometry x="480" y="270" width="270" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_edge_yes1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" parent="a1" source="a_cond1" target="a_err1" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_label_yes1" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="a_edge_yes1" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="a_cond2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;amount &gt; balance ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="a1" vertex="1">
-                    <mxGeometry x="140" y="320" width="220" height="120" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_edge_no1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" parent="a1" source="a_cond1" target="a_cond2" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_label_no1" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="a_edge_no1" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="a_err2" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;[ERROR] ยอดเงินในบัญชีไม่พอ&quot;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="a1" vertex="1">
-                    <mxGeometry x="380" y="440" width="260" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_edge_yes2" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" parent="a1" source="a_cond2" target="a_err2" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_label_yes2" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="a_edge_yes2" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="a_success" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;สำเร็จ คงเหลือ: &quot; + (balance - amount)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="a1" vertex="1">
-                    <mxGeometry x="50" y="490" width="310" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_edge_no2" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" parent="a1" source="a_cond2" target="a_success" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_label_no2" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="a_edge_no2" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="a_end" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;end&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="a1" vertex="1">
-                    <mxGeometry x="350" y="640" width="130" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_edge_end1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="a1" source="a_err1" target="a_end" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_edge_end2" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="a1" source="a_err2" target="a_end" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="a_edge_end3" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="a1" source="a_success" target="a_end" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
-    <diagram id="loop_diagram" name="4. countdown-loop.ts (Basic Loop)">
-        <mxGraphModel dx="1631" dy="687" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
-            <root>
-                <mxCell id="l0"/>
-                <mxCell id="l1" parent="l0"/>
-                <mxCell id="l_info" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;filename:&lt;/b&gt; countdown-loop.ts&lt;br&gt;&lt;b&gt;*display&lt;/b&gt; = การแสดงผลผ่านหน้าจอ&lt;br&gt;&lt;b&gt;*Loop Pattern:&lt;/b&gt; วนซ้ำจนกว่าเงื่อนไขเป็นเท็จ&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="l1" vertex="1">
-                    <mxGeometry x="660" y="50" width="340" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_test" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;ตัวอย่างการทำงานโปรแกรม (Test Cases):&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 14px; font-family: monospace;&quot;&gt;1) countdown(3)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์:&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;3&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;2&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;1&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;LAUNCH!&lt;br&gt;&lt;br&gt;2) countdown(0)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์:&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;LAUNCH!&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;strokeWidth=1;arcSize=10;" parent="l1" vertex="1">
-                    <mxGeometry x="660" y="160" width="360" height="260" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_start" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;countdown(n : number)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="l1" vertex="1">
-                    <mxGeometry x="250" y="50" width="240" height="60" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_cond" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;n &gt; 0 ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="l1" vertex="1">
-                    <mxGeometry x="280" y="170" width="180" height="130" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_edge_start" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="l1" source="l_start" target="l_cond" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_step1" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display n&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="l1" vertex="1">
-                    <mxGeometry x="290" y="360" width="160" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_edge_yes" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="l1" source="l_cond" target="l_step1" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_label_yes" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="l_edge_yes" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="l_step2" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;n = n - 1&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="l1" vertex="1">
-                    <mxGeometry x="290" y="460" width="160" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_edge_step" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="l1" source="l_step1" target="l_step2" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_edge_loop" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" parent="l1" source="l_step2" target="l_cond" edge="1">
+                <mxCell id="e1_4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="p1_loop" target="p1_decl" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="180" y="485"/>
-                            <mxPoint x="180" y="235"/>
+                            <mxPoint x="410" y="390"/>
+                            <mxPoint x="410" y="240"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="l_launch" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;LAUNCH!&quot;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="l1" vertex="1">
-                    <mxGeometry x="480" y="210" width="160" height="50" as="geometry"/>
+                <mxCell id="lbl_e1_4" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e1_4" vertex="1" connectable="0">
+                    <mxGeometry x="-0.3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="l_edge_no" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="l1" source="l_cond" target="l_launch" edge="1">
+                <mxCell id="e1_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p1_decl" target="p1_assign" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="l_label_no" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="l_edge_no" connectable="0" vertex="1">
+                <mxCell id="e1_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="p1_assign" target="p1_defined" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="565" y="420"/>
+                            <mxPoint x="465" y="420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e1_7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p1_defined" target="p1_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e1_7" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e1_7" vertex="1" connectable="0">
                     <mxGeometry x="-0.2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="l_end" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;end&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="l1" vertex="1">
-                    <mxGeometry x="495" y="360" width="130" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="l_edge_end" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="l1" source="l_launch" target="l_end" edge="1">
+                <mxCell id="e1_8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=1;exitY=0.5;" parent="1" source="p1_defined" target="p1_str" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e1_8" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e1_8" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e1_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p1_str" target="p1_echo" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1_10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="p1_echo" target="p1_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="470" y="770"/>
+                            <mxPoint x="470" y="705"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e1_11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=1;exitX=0;exitY=0.5;" parent="1" source="p1_inc" target="p1_loop" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="270" y="705"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
-    <diagram id="sum_diagram" name="5. sum-array.ts (Accumulator Loop)">
-        <mxGraphModel dx="1142" dy="481" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+    <diagram id="diag_2" name="2. print-evens.ts">
+        <mxGraphModel dx="2086" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="1920" math="0" shadow="0">
             <root>
-                <mxCell id="m0"/>
-                <mxCell id="m1" parent="m0"/>
-                <mxCell id="m_info" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;filename:&lt;/b&gt; sum-array.ts&lt;br&gt;&lt;b&gt;*display&lt;/b&gt; = การแสดงผลผ่านหน้าจอ&lt;br&gt;&lt;b&gt;*Accumulator Pattern:&lt;/b&gt; ตัวแปรสะสมผลรวมในลูป&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="m1" vertex="1">
-                    <mxGeometry x="770" y="60" width="380" height="80" as="geometry"/>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="p2_note" value="filename: print-evens.ts&#10;* ตรวจสอบเฉพาะเลขคู่ (num % 2 === 0) แล้วแปลงเป็น string&#10;* echo import มาจาก &quot;./echo&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontColor=#2ecc71;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="70" width="420" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_test" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;ตัวอย่างการทำงานโปรแกรม (Test Cases):&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 14px; font-family: monospace;&quot;&gt;1) sumNumbers([10, 20, 30])&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: ผลรวม: 60&lt;br&gt;&lt;br&gt;2) sumNumbers([])&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: ผลรวม: 0&lt;br&gt;&lt;br&gt;3) sumNumbers([5, -2, 7])&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: ผลรวม: 10&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;strokeWidth=1;arcSize=10;" parent="m1" vertex="1">
-                    <mxGeometry x="770" y="160" width="380" height="250" as="geometry"/>
+                <mxCell id="p2_testcases" value="&lt;b&gt;TEST CASES &amp;amp; MOCK DATA&lt;/b&gt;&lt;hr&gt;&lt;br&gt;&lt;b&gt;Case 1: ผสมเลขคู่และเลขคี่&lt;/b&gt;&lt;br&gt;Input: [1, 2, 3, 4, 5, 6]&lt;br&gt;Expected Output:&lt;br&gt;  system: 2&lt;br&gt;  system: 4&lt;br&gt;  system: 6&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 2: มีเฉพาะเลขคี่&lt;/b&gt;&lt;br&gt;Input: [7, 9, 11]&lt;br&gt;Expected Output:&lt;br&gt;  (ไม่มี output)&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 3: เลขคู่รวมถึง 0 และลบ&lt;/b&gt;&lt;br&gt;Input: [0, -2, -4, 8]&lt;br&gt;Expected Output:&lt;br&gt;  system: 0&lt;br&gt;  system: -2&lt;br&gt;  system: -4&lt;br&gt;  system: 8&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 4: Array ว่าง (Edge Case)&lt;/b&gt;&lt;br&gt;Input: []&lt;br&gt;Expected Output:&lt;br&gt;  (ไม่มี output)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#1e1e1e;strokeColor=#4a4a4a;fontColor=#ffffff;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;spacingRight=14;fontSize=12;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="930" y="70" width="300" height="470" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_start" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;sumNumbers(nums : number[])&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="m1" vertex="1">
-                    <mxGeometry x="240" y="50" width="270" height="50" as="geometry"/>
+                <mxCell id="p2_start" value="printEvens(nums: number[])" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="80" width="240" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_init" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;i = 0&lt;br&gt;sum = 0&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="m1" vertex="1">
-                    <mxGeometry x="275" y="130" width="200" height="55" as="geometry"/>
+                <mxCell id="p2_init" value="index = 0&#10;num_length = nums.length" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="150" y="190" width="240" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_edge_init" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="m1" source="m_start" target="m_init" edge="1">
+                <mxCell id="p2_loop" value="index &lt; num_length ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="310" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2_end" value="end" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="520" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2_decl" value="num: number | undefined" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="195" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2_assign" value="num = nums[ index ]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="305" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2_defined" value="num !== undefined ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="420" width="190" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2_even" value="num % 2 === 0 ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="570" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2_str" value="numString: string = String(num)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=13;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="660" y="720" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2_echo" value="echo( numString )" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;strokeColor=#e74c3c;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="660" y="820" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p2_inc" value="index++" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="740" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p2_start" target="p2_init" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_cond" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;i &lt; nums.length ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="m1" vertex="1">
-                    <mxGeometry x="270" y="220" width="210" height="110" as="geometry"/>
-                </mxCell>
-                <mxCell id="m_edge_start_cond" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="m1" source="m_init" target="m_cond" edge="1">
+                <mxCell id="e2_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p2_init" target="p2_loop" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_add" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;sum = sum + nums[i]&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="m1" vertex="1">
-                    <mxGeometry x="270" y="370" width="210" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="m_edge_yes" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="m1" source="m_cond" target="m_add" edge="1">
+                <mxCell id="e2_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p2_loop" target="p2_end" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_label_yes" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="m_edge_yes" connectable="0" vertex="1">
+                <mxCell id="lbl_e2_3" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e2_3" vertex="1" connectable="0">
                     <mxGeometry x="-0.2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="m_inc" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;i = i + 1&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="m1" vertex="1">
-                    <mxGeometry x="270" y="460" width="210" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="m_edge_step" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="m1" source="m_add" target="m_inc" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="m_loop" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" parent="m1" source="m_inc" target="m_cond" edge="1">
+                <mxCell id="e2_4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="p2_loop" target="p2_decl" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="160" y="485"/>
-                            <mxPoint x="160" y="275"/>
+                            <mxPoint x="410" y="370"/>
+                            <mxPoint x="410" y="225"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="m_out" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;ผลรวม: &quot; + sum&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="m1" vertex="1">
-                    <mxGeometry x="540" y="250" width="200" height="50" as="geometry"/>
+                <mxCell id="lbl_e2_4" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e2_4" vertex="1" connectable="0">
+                    <mxGeometry x="-0.3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="m_edge_no" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="m1" source="m_cond" target="m_out" edge="1">
+                <mxCell id="e2_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p2_decl" target="p2_assign" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="m_label_no" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="m_edge_no" connectable="0" vertex="1">
+                <mxCell id="e2_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="p2_assign" target="p2_defined" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="565" y="390"/>
+                            <mxPoint x="565" y="420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e2_7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p2_defined" target="p2_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="425" y="480"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e2_7" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e2_7" vertex="1" connectable="0">
                     <mxGeometry x="-0.2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="m_end" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;end&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="m1" vertex="1">
-                    <mxGeometry x="580" y="360" width="120" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="m_edge_end" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="m1" source="m_out" target="m_end" edge="1">
+                <mxCell id="e2_8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=1;exitY=0.5;" parent="1" source="p2_defined" target="p2_even" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e2_8" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e2_8" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e2_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="p2_even" target="p2_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="520" y="625"/>
+                            <mxPoint x="520" y="765"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e2_9" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e2_9" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e2_10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=1;exitY=0.5;" parent="1" source="p2_even" target="p2_str" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e2_10" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e2_10" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e2_11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p2_str" target="p2_echo" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2_12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="p2_echo" target="p2_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="600" y="850"/>
+                            <mxPoint x="600" y="765"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e2_13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=1;exitX=0;exitY=0.5;" parent="1" source="p2_inc" target="p2_loop" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="270" y="765"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
-    <diagram id="even_diagram" name="6. count-even.ts (Loop with Filter)">
-        <mxGraphModel dx="2076" dy="875" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+    <diagram id="diag_3" name="3. sum-positives.ts">
+        <mxGraphModel dx="2086" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="1920" math="0" shadow="0">
             <root>
-                <mxCell id="c0"/>
-                <mxCell id="c1" parent="c0"/>
-                <mxCell id="c_info" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;filename:&lt;/b&gt; count-even.ts&lt;br&gt;&lt;b&gt;*display&lt;/b&gt; = การแสดงผลผ่านหน้าจอ&lt;br&gt;&lt;b&gt;*Nested Pattern:&lt;/b&gt; มีเงื่อนไขตัดสินใจซ้อนอยู่ข้างในลูป&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="c1" vertex="1">
-                    <mxGeometry x="680" y="50" width="380" height="80" as="geometry"/>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="p3_note" value="filename: sum-positives.ts&#10;* สะสมผลรวมเฉพาะตัวเลขที่เป็นบวก (&gt; 0)&#10;* ส่งคืนค่าผลรวม return total: number" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontColor=#2ecc71;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="70" width="400" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_test" value="&lt;b style=&quot;font-size: 15px;&quot;&gt;ตัวอย่างการทำงานโปรแกรม (Test Cases):&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 14px; font-family: monospace;&quot;&gt;1) countEvens([1, 2, 3, 4, 6])&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: จำนวนเลขคู่: 3&lt;br&gt;&lt;br&gt;2) countEvens([1, 3, 5])&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: จำนวนเลขคู่: 0&lt;br&gt;&lt;br&gt;3) countEvens([])&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;ผลลัพธ์: จำนวนเลขคู่: 0&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=12;strokeWidth=1;arcSize=10;" parent="c1" vertex="1">
-                    <mxGeometry x="780" y="150" width="380" height="250" as="geometry"/>
+                <mxCell id="p3_testcases" value="&lt;b&gt;TEST CASES &amp;amp; MOCK DATA&lt;/b&gt;&lt;hr&gt;&lt;br&gt;&lt;b&gt;Case 1: ผสมบวก ลบ ศูนย์&lt;/b&gt;&lt;br&gt;Input: [10, -5, 20, 0, -3, 7]&lt;br&gt;Expected Return: 37&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 2: ติดลบทั้งหมด&lt;/b&gt;&lt;br&gt;Input: [-10, -20, -30]&lt;br&gt;Expected Return: 0&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 3: เป็นบวกทั้งหมด&lt;/b&gt;&lt;br&gt;Input: [5, 15, 25]&lt;br&gt;Expected Return: 45&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 4: มีเฉพาะศูนย์&lt;/b&gt;&lt;br&gt;Input: [0, 0, 0]&lt;br&gt;Expected Return: 0&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 5: Array ว่าง (Edge Case)&lt;/b&gt;&lt;br&gt;Input: []&lt;br&gt;Expected Return: 0" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#1e1e1e;strokeColor=#4a4a4a;fontColor=#ffffff;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;spacingRight=14;fontSize=12;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="70" width="300" height="470" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_start" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;countEvens(nums : number[])&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="c1" vertex="1">
-                    <mxGeometry x="230" y="40" width="260" height="50" as="geometry"/>
+                <mxCell id="p3_start" value="sumPositives(nums: number[]): number" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="80" width="280" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_init" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;i = 0&lt;br&gt;count = 0&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="c1" vertex="1">
-                    <mxGeometry x="260" y="115" width="200" height="50" as="geometry"/>
+                <mxCell id="p3_init" value="total = 0&#10;index = 0&#10;num_length = nums.length" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="190" width="260" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_edge_init" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="c1" source="c_start" target="c_init" edge="1">
+                <mxCell id="p3_loop" value="index &lt; num_length ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3_ret" value="return total" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;strokeColor=#3498db;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="520" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3_end" value="end" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="620" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3_decl" value="num: number | undefined" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="200" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3_assign" value="num = nums[ index ]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="310" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3_defined" value="num !== undefined ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="420" width="190" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3_pos" value="num &gt; 0 ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="575" y="570" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3_add" value="total = total + num" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="720" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p3_inc" value="index++" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="370" y="740" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p3_start" target="p3_init" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_cond" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;i &lt; nums.length ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="c1" vertex="1">
-                    <mxGeometry x="260" y="195" width="200" height="100" as="geometry"/>
-                </mxCell>
-                <mxCell id="c_edge_start_cond" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="c1" source="c_init" target="c_cond" edge="1">
+                <mxCell id="e3_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p3_init" target="p3_loop" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_check" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;nums[i] % 2 === 0 ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" parent="c1" vertex="1">
-                    <mxGeometry x="250" y="330" width="220" height="100" as="geometry"/>
-                </mxCell>
-                <mxCell id="c_edge_yes1" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="c1" source="c_cond" target="c_check" edge="1">
+                <mxCell id="e3_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p3_loop" target="p3_ret" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_label_yes1" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="c_edge_yes1" connectable="0" vertex="1">
+                <mxCell id="lbl_e3_3" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e3_3" vertex="1" connectable="0">
                     <mxGeometry x="-0.2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="c_inc_count" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;count = count + 1&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="c1" vertex="1">
-                    <mxGeometry x="90" y="440" width="180" height="45" as="geometry"/>
-                </mxCell>
-                <mxCell id="c_edge_even_yes" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" parent="c1" source="c_check" target="c_inc_count" edge="1">
+                <mxCell id="e3_ret_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p3_ret" target="p3_end" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_label_even_yes" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="c_edge_even_yes" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="c_inc_i" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;i = i + 1&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="c1" vertex="1">
-                    <mxGeometry x="260" y="520" width="200" height="45" as="geometry"/>
-                </mxCell>
-                <mxCell id="c_edge_from_inc" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="c1" source="c_inc_count" target="c_inc_i" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="c_edge_even_no" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" parent="c1" source="c_check" target="c_inc_i" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="c_label_even_no" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="c_edge_even_no" connectable="0" vertex="1">
-                    <mxGeometry x="-0.2" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="c_loop" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" parent="c1" source="c_inc_i" target="c_cond" edge="1">
+                <mxCell id="e3_4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="p3_loop" target="p3_decl" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="60" y="542"/>
-                            <mxPoint x="60" y="245"/>
+                            <mxPoint x="420" y="380"/>
+                            <mxPoint x="420" y="230"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="c_out" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;display &quot;จำนวนเลขคู่: &quot; + count&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;arcSize=20;" parent="c1" vertex="1">
-                    <mxGeometry x="520" y="220" width="230" height="50" as="geometry"/>
+                <mxCell id="lbl_e3_4" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e3_4" vertex="1" connectable="0">
+                    <mxGeometry x="-0.3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
                 </mxCell>
-                <mxCell id="c_edge_no" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" parent="c1" source="c_cond" target="c_out" edge="1">
+                <mxCell id="e3_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p3_decl" target="p3_assign" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="c_label_no" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=14;" parent="c_edge_no" connectable="0" vertex="1">
+                <mxCell id="e3_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="p3_assign" target="p3_defined" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="585" y="395"/>
+                            <mxPoint x="585" y="420"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e3_7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p3_defined" target="p3_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="435" y="480"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e3_7" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e3_7" vertex="1" connectable="0">
                     <mxGeometry x="-0.2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="c_end" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;end&lt;/b&gt;&lt;/font&gt;" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;strokeWidth=2;" parent="c1" vertex="1">
-                    <mxGeometry x="575" y="320" width="120" height="50" as="geometry"/>
-                </mxCell>
-                <mxCell id="c_edge_end" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" parent="c1" source="c_out" target="c_end" edge="1">
+                <mxCell id="e3_8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=1;exitY=0.5;" parent="1" source="p3_defined" target="p3_pos" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
+                <mxCell id="lbl_e3_8" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e3_8" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e3_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="p3_pos" target="p3_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="530" y="625"/>
+                            <mxPoint x="530" y="765"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e3_9" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e3_9" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e3_10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=1;exitY=0.5;" parent="1" source="p3_pos" target="p3_add" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e3_10" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e3_10" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e3_11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="p3_add" target="p3_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="590" y="750"/>
+                            <mxPoint x="590" y="765"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e3_12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=1;exitX=0;exitY=0.5;" parent="1" source="p3_inc" target="p3_loop" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="270" y="765"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="diag_4" name="4. find-max.ts">
+        <mxGraphModel dx="2086" dy="811" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="1920" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="p4_note" value="filename: find-max.ts&#10;* ค้นหาค่าสูงสุดใน Array&#10;* มี Guard Clause: nums.length === 0 คืนค่า undefined" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontColor=#2ecc71;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="70" width="420" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_testcases" value="&lt;b&gt;TEST CASES &amp;amp; MOCK DATA&lt;/b&gt;&lt;hr&gt;&lt;br&gt;&lt;b&gt;Case 1: ค่าคละไม่เรียงลำดับ&lt;/b&gt;&lt;br&gt;Input: [3, 9, 2, 15, 6]&lt;br&gt;Expected Return: 15&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 2: ติดลบทั้งหมด&lt;/b&gt;&lt;br&gt;Input: [-10, -3, -50, -1]&lt;br&gt;Expected Return: -1&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 3: ข้อมูลตัวเดียว&lt;/b&gt;&lt;br&gt;Input: [42]&lt;br&gt;Expected Return: 42&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 4: ข้อมูลเท่ากันทั้งหมด&lt;/b&gt;&lt;br&gt;Input: [7, 7, 7]&lt;br&gt;Expected Return: 7&lt;br&gt;&lt;br&gt;&lt;b&gt;Case 5: Array ว่าง (Guard Clause)&lt;/b&gt;&lt;br&gt;Input: []&lt;br&gt;Expected Return: undefined" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#1e1e1e;strokeColor=#4a4a4a;fontColor=#ffffff;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;spacingRight=14;fontSize=12;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="70" width="300" height="470" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_start" value="findMax(nums: number[]): number | undefined" style="rounded=1;whiteSpace=wrap;html=1;arcSize=30;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="70" width="310" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_guard" value="nums.length === 0 ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="170" width="210" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_ret_undef" value="return undefined" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;strokeColor=#e67e22;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="320" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_end1" value="end" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="55" y="410" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_init" value="max = nums[ 0 ]&#10;index = 1&#10;num_length = nums.length" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="320" width="250" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_loop" value="index &lt; num_length ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="295" y="450" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_ret_max" value="return max" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;strokeColor=#3498db;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="130" y="620" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_end2" value="end" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="710" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_decl" value="num: number | undefined" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="580" y="330" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_assign" value="num = nums[ index ]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="580" y="440" width="230" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_defined" value="num !== undefined ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="550" width="190" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_gt" value="num &gt; max ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="680" y="700" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_update" value="max = num" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="840" width="170" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p4_inc" value="index++" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontSize=14;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="845" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p4_start" target="p4_guard" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p4_guard" target="p4_ret_undef" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e4_2" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e4_2" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_ret_end1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p4_ret_undef" target="p4_end1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=1;exitY=0.5;" parent="1" source="p4_guard" target="p4_init" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="395" y="225"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e4_3" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e4_3" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p4_init" target="p4_loop" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p4_loop" target="p4_ret_max" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e4_5" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e4_5" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_ret_end2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p4_ret_max" target="p4_end2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="p4_loop" target="p4_decl" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="540" y="510"/>
+                            <mxPoint x="540" y="360"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e4_6" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e4_6" vertex="1" connectable="0">
+                    <mxGeometry x="-0.3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p4_decl" target="p4_assign" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="p4_assign" target="p4_defined" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="695" y="520"/>
+                            <mxPoint x="695" y="550"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p4_defined" target="p4_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="545" y="610"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e4_9" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e4_9" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=1;exitY=0.5;" parent="1" source="p4_defined" target="p4_gt" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e4_10" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e4_10" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="p4_gt" target="p4_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="640" y="755"/>
+                            <mxPoint x="640" y="870"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e4_11" value="no" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e4_11" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=1;exitY=0.5;" parent="1" source="p4_gt" target="p4_update" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e4_12" value="yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e4_12" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e4_13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;exitX=0;exitY=0.5;" parent="1" source="p4_update" target="p4_inc" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=1;exitX=0;exitY=0.5;" parent="1" source="p4_inc" target="p4_loop" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="395" y="870"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="diag_5" name="5. 4-Colors Blueprint">
+        <mxGraphModel dx="352" dy="412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1350" pageHeight="1920" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="p5_note" value="* ตัวอย่างผังงานแบบประหยัด: ใช้เฉพาะกล่องสี่เหลี่ยม (Process) และข้าวหลามตัด (Decision) เท่านั้น&#10;* แยก 4 สีตามเกณฑ์ระเบียบวินัย: เขียว (Keyword), แดง (Type), น้ำเงิน (Name/Op/Val), ดำ (Syntax/กรอบ)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontFamily=Courier New;fontColor=#2ecc71;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="20" width="850" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5_legend" value="&lt;b&gt;4-COLOR CODING STANDARD&lt;/b&gt;&lt;hr&gt;&lt;br&gt;&lt;font color=&quot;#27ae60&quot;&gt;■ สีเขียว (Keywords):&lt;/font&gt; function, let, const, return, YES, NO&lt;br&gt;&lt;font color=&quot;#e74c3c&quot;&gt;■ สีแดง (Types):&lt;/font&gt; : string, : number, : boolean, : void&lt;br&gt;&lt;font color=&quot;#2980b9&quot;&gt;■ สีน้ำเงิน (Name/Op/Num):&lt;/font&gt; ชื่อตัวแปร, เครื่องหมาย (+, -, &amp;lt;, ===), ตัวเลข&lt;br&gt;&lt;font color=&quot;#ffffff&quot;&gt;■ สีดำ (Syntax/Frame):&lt;/font&gt; กรอบสี่เหลี่ยม, ข้าวหลามตัด, วงเล็บ ( ), ปีกกา { }, ;" style="rounded=0;whiteSpace=wrap;html=1;arcSize=0;fillColor=#1e1e1e;strokeColor=#4a4a4a;fontColor=#ffffff;align=left;verticalAlign=top;spacingLeft=14;spacingTop=12;spacingRight=14;fontSize=12;fontFamily=Courier New;" parent="1" vertex="1">
+                    <mxGeometry x="720" y="80" width="390" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5_box1" value="&lt;font color=&quot;#27ae60&quot;&gt;function&lt;/font&gt; &lt;font color=&quot;#2980b9&quot;&gt;countEven&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt;(&lt;/font&gt;&lt;font color=&quot;#2980b9&quot;&gt;nums&lt;/font&gt;&lt;font color=&quot;#e74c3c&quot;&gt;: number[]&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt;):&lt;/font&gt; &lt;font color=&quot;#e74c3c&quot;&gt;number&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#27ae60&quot;&gt;let&lt;/font&gt; &lt;font color=&quot;#2980b9&quot;&gt;count&lt;/font&gt;&lt;font color=&quot;#e74c3c&quot;&gt;: number&lt;/font&gt; &lt;font color=&quot;#2980b9&quot;&gt;= 0&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt;;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#27ae60&quot;&gt;let&lt;/font&gt; &lt;font color=&quot;#2980b9&quot;&gt;i&lt;/font&gt;&lt;font color=&quot;#e74c3c&quot;&gt;: number&lt;/font&gt; &lt;font color=&quot;#2980b9&quot;&gt;= 0&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt;;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=13;fontFamily=Courier New;fillColor=#ffffff;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="80" width="360" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5_dia1" value="&lt;font color=&quot;#2980b9&quot;&gt;i &amp;lt; nums.length&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt; ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=14;fontFamily=Courier New;fillColor=#ffffff;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="220" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5_box_return" value="&lt;font color=&quot;#27ae60&quot;&gt;return&lt;/font&gt; &lt;font color=&quot;#2980b9&quot;&gt;count&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt;;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=14;fontFamily=Courier New;fillColor=#ffffff;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="490" y="250" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5_dia2" value="&lt;font color=&quot;#2980b9&quot;&gt;nums[ i ] % 2 === 0&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt; ?&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=14;fontFamily=Courier New;fillColor=#ffffff;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="400" width="240" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5_box_count" value="&lt;font color=&quot;#2980b9&quot;&gt;count = count + 1&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt;;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=14;fontFamily=Courier New;fillColor=#ffffff;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="560" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="p5_box_step" value="&lt;font color=&quot;#2980b9&quot;&gt;i++&lt;/font&gt;&lt;font color=&quot;#000000&quot;&gt;;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;strokeWidth=2;fontSize=14;fontFamily=Courier New;fillColor=#ffffff;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="680" width="220" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="e5_1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;" parent="1" source="p5_box1" target="p5_dia1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e5_2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="p5_dia1" target="p5_box_return" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e5_2" value="&lt;font color=&quot;#27ae60&quot;&gt;&lt;b&gt;NO&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e5_2" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5_3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0.5;exitY=1;" parent="1" source="p5_dia1" target="p5_dia2" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e5_3" value="&lt;font color=&quot;#27ae60&quot;&gt;&lt;b&gt;YES&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e5_3" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5_4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;entryY=0;exitX=0;exitY=0.5;" parent="1" source="p5_dia2" target="p5_box_count" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="lbl_e5_4" value="&lt;font color=&quot;#27ae60&quot;&gt;&lt;b&gt;YES&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e5_4" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5_5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=1;entryY=0.5;exitX=1;exitY=0.5;" parent="1" source="p5_dia2" target="p5_box_step" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="480" y="460"/>
+                            <mxPoint x="480" y="710"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="lbl_e5_5" value="&lt;font color=&quot;#27ae60&quot;&gt;&lt;b&gt;NO&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Courier New;" parent="e5_5" vertex="1" connectable="0">
+                    <mxGeometry x="-0.2" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5_6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;exitX=0.5;exitY=1;" parent="1" source="p5_box_count" target="p5_box_step" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="710"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5_7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0;entryY=0.5;exitX=0.5;exitY=1;" parent="1" source="p5_box_step" target="p5_dia1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="300" y="770"/>
+                            <mxPoint x="90" y="770"/>
+                            <mxPoint x="90" y="280"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="GappAnRmYfggRWPx00fT" name="Page-6">
+        <mxGraphModel dx="1078" dy="412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
             </root>
         </mxGraphModel>
     </diagram>

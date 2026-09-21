@@ -42,6 +42,7 @@ buttonsEl.forEach((btn) => {
             inputFieldEl.value = "ERROR";
             firstOperend = "";
             currenOpertor = "";
+            waitingForSecond = true
             return;
           }
           result = num1 / num2;

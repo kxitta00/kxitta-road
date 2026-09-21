@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro-Web</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body>
+  <div class="timer-card">
+    <!-- ปุ่ม focus และ break -->
+    <div class="mode-tabs">
+      <button class="mode-btn active" id="focus-mode-btn">FOCUS</button>
+      <button class="mode-btn" id="break-mode-btn">BREAK</button>
+    </div>
+    <!-- แสดงเวลาและคำว่า Focus Time -->
+    <div class="timer-display">
+      <h2 id="timer-display">50:00</h2>
+      <span class="display-lebel" id="timer-label">Focus Time</span>
+    </div>
+    <!-- โซนปุ่มเพิ่มลดเวลา -->
+    <!--card 1 -->
+    <div class="steppers-container">
+      <div class="card">
+        <div class="stepper-label">
+          <div class="lebel-title">
+            <p>Focus Time</p>
+          </div>
+          <div class="lebel-unit">
+            <p>Min</p>
+          </div>
+        </div>
+        <div class="stepper-value" id="focus-time">
+          50
+        </div>
+        <div class="stepper-btn">
+          <button class="btn-down" id="focus-dec-btn"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn-up" id="focus-inc-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+      <!-- card 2 -->
+      <div class="card">
+        <div class="stepper-label">
+          <div class="lebel-title">
+            <p>Break Time</p>
+          </div>
+          <div class="lebel-unit">
+            <p>Min</p>
+          </div>
+        </div>
+        <div class="stepper-value" id="break-time">
+          10
+        </div>
+        <div class="stepper-btn">
+          <button class="btn-down" id="break-dec-btn"><i class="fa-solid fa-minus"></i></button>
+          <button class="btn-up" id="break-inc-btn"><i class="fa-solid fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="control-actions">
+      <button class="btn-start" id="start-btn">START</button>
+      <button class="btn-reset" id="reset-btn">RESET</button>
+    </div>
+  </div>
+  <!-- โซนปุ่มควบคุ้มล่างสุด -->
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>

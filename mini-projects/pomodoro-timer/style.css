@@ -1,0 +1,222 @@
+:root {
+  /* Backgrounds */
+  --bg-page: #f6f5f0;
+  --bg-card: #ffffff;
+  --bg-pill-track: #eceae5;
+  --bg-stepper-card: #faf9f6;
+  --bg-stepper-btn: #ffffff;
+
+  /* Typography */
+  --text-main: #1e1e1e;
+  --text-muted: #8c8a85;
+  --text-white: #ffffff;
+
+  /* Actions & Accents */
+  --color-primary: #85a98f;
+  --color-primary-hover: #74987e;
+  --btn-reset-bg: #e6e4df;
+  --btn-reset-hover: #dad7d1;
+
+  /* Borders & Shadows */
+  --border-card: 1px solid #ebe9e3;
+  --shadow-card: 0 20px 45px rgba(0, 0, 0, 0.05);
+  --shadow-btn: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* แต่งจากนอกสุดเข้าในสุด */
+body {
+  background-color: var(--bg-page);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--bg-card);
+  border-radius: 32px;
+  box-shadow: var(--shadow-card);
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.mode-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--bg-pill-track);
+  padding: 4px;
+  border-radius: 9999px;
+
+}
+
+.mode-btn {
+  color: var(--text-muted);
+  background-color: transparent;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  background-color: var(--bg-card);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-btn);
+}
+
+.mode-btn:not(.active):hover {
+  color: var(--text-main);
+
+}
+
+.timer-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+h2 {
+  font-size: 4rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.display-lebel {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.steppers-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 6px;
+}
+
+.card {
+  background-color: var(--bg-stepper-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 18px;
+  border-radius: 12px;
+}
+
+.stepper-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lebel-title {
+  font-weight: 450;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.lebel-unit {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.stepper-value {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stepper-btn {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-down {
+  font-size: 1rem;
+  padding: 6px;
+  background-color: var(--bg-stepper-btn);
+  border: none;
+  box-shadow: var(--shadow-btn);
+  border-radius: 8px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-up {
+  font-size: 1rem;
+  padding: 6px;
+  background-color: var(--bg-stepper-btn);
+  border: none;
+  box-shadow: var(--shadow-btn);
+  border-radius: 8px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-down:hover {
+  background-color: var(--btn-reset-hover);
+}
+
+.btn-up:hover {
+  background-color: var(--btn-reset-hover);
+}
+
+.control-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-start {
+  color: var(--text-white);
+  background-color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 12px 36px;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: var(--shadow-btn);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-reset {
+  color: var(--text-muted);
+  background-color: var(--btn-reset-bg);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 12px 36px;
+  border-radius: 9999px;
+  border: none;
+  box-shadow: var(--shadow-btn);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-start:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-reset:hover {
+  background-color: var(--btn-reset-hover);
+}
