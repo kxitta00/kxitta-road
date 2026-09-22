@@ -84,4 +84,10 @@ function stopTimer(): void {
     timerId = null;         // เคลียร์ค่ากลับเป็น null
   }
 }
+
+ได้รู้จักการนำเสียงเข้ามาใช้ในเว็บ
+ด้วยคำสั่ง new Audio และ .play()
+EX 
+const alarmSound = new Audio("./PATH") นำเสียงเข้ามา
+alarmSound.play() สั่งเล่น
 ```
