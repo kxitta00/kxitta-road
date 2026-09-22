@@ -27,6 +27,7 @@ var currentMode = "focus";
 var timeLeft = toSeconds(focusMinutes);
 var isRunning = false;
 var timerInterval = null;
+var alarmSound = new Audio("./alarmSound.mp3");
 var timerDisplay = document.getElementById("timer-display");
 var labelDisplay = document.getElementById("timer-label");
 var focusModeBtn = document.getElementById("focus-mode-btn");
@@ -109,6 +110,7 @@ startBtn.addEventListener("click", () => {
       timeLeft--;
       updateUI();
       if (timeLeft === 0 && currentMode === "focus") {
+        alarmSound.play();
         isRunning = false;
         stopTimer();
         currentMode = "break";
@@ -116,6 +118,7 @@ startBtn.addEventListener("click", () => {
         updateUI();
       }
       if (timeLeft === 0 && currentMode === "break") {
+        alarmSound.play();
         currentMode = "focus";
         stopTimer();
         timeLeft = toSeconds(focusMinutes);

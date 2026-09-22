@@ -2,8 +2,8 @@ import { formatTime, toSeconds, adjustMinutes } from "./timer-engine";
 
 // 1. STATE: ตัวแปรเก็บข้อมูลความทรงจำของระบบ [x]
 // 2. PURE HELPER: ฟังก์ชันแปลงค่าคำนวณ (แปลงวินาที -> "MM:SS") [x]
-// 3. DOM SELECTION: ดึง Element จาก index.html มาเก็บในตัวแปร []
-// 4. LOGIC & EVENT LISTENERS: ฟังก์ชันสั่งงานและดักการคลิกปุ่ม []
+// 3. DOM SELECTION: ดึง Element จาก index.html มาเก็บในตัวแปร [x]
+// 4. LOGIC & EVENT LISTENERS: ฟังก์ชันสั่งงานและดักการคลิกปุ่ม [x]
 
 
 let focusMinutes: number = 50;
@@ -16,6 +16,8 @@ let timeLeft: number = toSeconds(focusMinutes);
 let isRunning: boolean = false;
 let timerInterval: number | null = null;
 
+//alarmSound
+const alarmSound = new Audio("./alarmSound.mp3");
 //display
 const timerDisplay = document.getElementById("timer-display") as HTMLElement;
 const labelDisplay = document.getElementById("timer-label") as HTMLElement;
@@ -120,6 +122,7 @@ startBtn.addEventListener("click", () => {
       timeLeft--;
       updateUI()
       if (timeLeft === 0 && currentMode === "focus") {
+        alarmSound.play()
         isRunning = false;
         stopTimer()
         currentMode = "break"
@@ -127,6 +130,7 @@ startBtn.addEventListener("click", () => {
         updateUI()
       }
       if (timeLeft === 0 && currentMode === "break") {
+        alarmSound.play()
         currentMode = "focus"
         stopTimer()
         timeLeft = toSeconds(focusMinutes)
