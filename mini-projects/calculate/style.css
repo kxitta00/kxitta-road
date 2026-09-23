@@ -1,0 +1,91 @@
+:root {
+  /* พื้นหลังนอกสุดของหน้าจอ */
+  --bg-app: #333333;
+
+  /* กรอบเครื่องคิดเลขใหญ่ (สีม่วงเข้ม) */
+  --card-bg: #700074;
+
+  /* โซนหน้าจอแสดงผล (สีชมพูอ่อนพาสเทล) */
+  --display-bg: #ffc2f4;
+
+  /* แผงปุ่มกดล่าง (สีขาวคลีน) */
+  --keypad-bg: #ffffff;
+
+  /* ปุ่มเท่ากับ (=) และสีตัวหนังสือเครื่องหมาย (ม่วงเข้มจัด) */
+  --primary-purple: #700074;
+
+  /* สีตัวเลขหลักและเส้นขอบ (ดำเข้ม) */
+  --text-dark: #1a1a1a;
+
+  /* สีตัวหนังสือบนปุ่มเท่ากับ (ขาว) */
+  --text-white: #ffffff;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-app);
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.calculate-card {
+  border: 5px solid var(--card-bg);
+  border-radius: 18px;
+  width: 100%;
+  max-width: 360px;
+
+}
+
+.display-container {
+  background-color: var(--display-bg);
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+}
+
+.button-container {
+  background-color: var(--keypad-bg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+.btn {
+  font-family: inherit;
+  font-weight: 530;
+  font-size: 1.25rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn-number {
+  font-weight: 600;
+}
+
+.btn-op {
+  color: var(--card-bg);
+}
+
+.btn-action {
+  color: var(--card-bg);
+}
+
+.btn-equal {
+  grid-row: span 2;
+  color: var(--keypad-bg);
+  background-color: var(--card-bg);
+  border-bottom-right-radius: 18px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myCalculate</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- กล่องใหญ่ -->
+  <div class="calculate-card">
+    <!-- โซนหน้าจอ -->
+    <div class="display-container">
+      <p id="previous-operand">16 x 98</p>
+      <h2 id="current-operand">1,862</h2>
+    </div>
+    <!-- โซนปุ่มกด -->
+    <div class="button-container">
+      <!-- line 1 -->
+      <button class="btn btn-action" data-action="clear">Clear</button>
+      <button class="btn btn-op" data-op="/">÷</button>
+      <button class="btn btn-op" data-op="*">x</button>
+      <button class="btn btn-action" data-action="ce">ce</button>
+      <!-- line 2 -->
+      <button class="btn btn-number" data-number="7">7</button>
+      <button class="btn btn-number" data-number="8">8</button>
+      <button class="btn btn-number" data-number="9">9</button>
+      <button class="btn btn-op" data-op="-">-</button>
+      <!-- line 3 -->
+      <button class="btn btn-number" data-number="4">4</button>
+      <button class="btn btn-number" data-number="5">5</button>
+      <button class="btn btn-number" data-number="6">6</button>
+      <button class="btn btn-op" data-op="+">+</button>
+      <!-- line 4 -->
+      <button class="btn btn-number" data-number="1">1</button>
+      <button class="btn btn-number" data-number="2">2</button>
+      <button class="btn btn-number" data-number="3">3</button>
+      <button class="btn btn-equal" data-action="calculate">=</button>
+      <!-- line 5 -->
+      <button class="btn btn-op" data-op="%">%</button>
+      <button class="btn btn-number" data-number="0">0</button>
+      <button class="btn btn-number" data-decimal=".">.</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
