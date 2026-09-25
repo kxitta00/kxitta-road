@@ -53,6 +53,10 @@ body {
   flex-direction: column;
 }
 
+.display-container h2 {
+  font-weight: 450;
+}
+
 .button-container {
   background-color: var(--keypad-bg);
   display: grid;
@@ -62,7 +66,7 @@ body {
 
 .btn {
   font-family: inherit;
-  font-weight: 530;
+  font-weight: 400;
   font-size: 1.25rem;
   border: none;
   display: flex;
