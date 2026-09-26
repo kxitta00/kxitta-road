@@ -88,6 +88,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 6px;
+  cursor: pointer;
 }
 
 .dot {
@@ -95,12 +96,16 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  transition: 0.3s ease;
 }
 
 .dot.active {
   background-color: #2C8B66;
 }
 
+.dot:hover {
+  transform: scale(1.2);
+}
 
 
 .product-preview img {

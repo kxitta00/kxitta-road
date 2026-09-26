@@ -9,8 +9,8 @@
 ```text
 lernTs/
 ├── typescript/        # โค้ดฝึกภาษา TypeScript (พื้นฐาน, ตรรกะฟังก์ชัน, งานในคลาส)
-├── html-css/          # 
-├── mini-projects/     # มินิโปรเจกต์และระบบจำลองต่างๆ
+├── html-css/          # ฝึกแกะ ui-component 
+├── mini-projects/     # มินิโปรเจกต์เพื่อการเรียนรู้
 ├── index.ts           # ไฟล์สำหรับทดลองรันโค้ด
 └── package.json       # การตั้งค่า Bun Runtime
 ```
