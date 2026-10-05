@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice-Card</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+
+<body>
+  <!-- แท็กครอบทั้งการ์ด -->
+  <article class="product-card">
+    <!-- ส่วนหัว รูป + ป้าย -->
+    <header class="card-media">
+      <img src="./shoes.png" alt="Nike Force 1 Low EasyOn LV8 3">
+      <div class="badges">
+        <span class="badge">-25%</span>
+        <button type="button" class="btn-favorite" aria-label="Add to favorites"><i class="fa-regular fa-heart"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- ส่วนเนื้อหา -->
+    <div class="content">
+      <p class="category">FOOTWEAR</p>
+      <h2 class="title">Nike Force 1 Low EasyOn LV8 3</h2>
+      <p class="description">Redesigned for little feet, the new Force 1 pairs classic hoops style with EasyOn tech for
+        quick, effortless on-and-off—built for kids on the move.</p>
+    </div>
+    <!-- ส่วนราคาและดาวรีวิว -->
+    <div class="price-review">
+      <div class="review-tag">
+        <div class="star">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="review-content">
+          <span>4.8 (126 reviews)</span>
+        </div>
+      </div>
+      <div class="price">
+        <span class="price-current">$149.00</span>
+        <del class="price-original">$199.99</del>
+      </div>
+    </div>
+    <!-- ส่วนล่างสุดของการ์ดปุ่มและตัวกดเพิ่มสินค้า -->
+    <footer class="card-footer">
+      <div class="stepper">
+        <button type="button" class="minus-btn" aria-label="Decrease quantity"><i
+            class="fa-solid fa-minus"></i></button>
+        <span class="quantity">1</span>
+        <button type="button" class="plus-btn" aria-label="Increase quantity"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <button type="button" class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i>Add to Cart</button>
+    </footer>
+  </article>
+</body>
+
+</html>
