@@ -1,13 +1,16 @@
 function hello(repeat: number, to: string): void {
   let text: string = "hello"
-  let result: string = "";
+  let result: string = text;
   let index: number = 1;
-  for (let i =)
+  while (index < repeat) {
+    result += text;
+    index++
+  }
   if (repeat === 0) {
-      console.log(result + "!");
-    } else {
-      console.log(result + to + "!");
-    }
+    console.log(to + "!");
+  } else {
+    console.log(`${result} ${to}!`);
+  }
 }
 
 hello(3, "a")
