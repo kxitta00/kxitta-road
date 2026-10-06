@@ -81,6 +81,11 @@ body {
   background-color: #e0e0e0;
 }
 
+.btn-favorite.active {
+  background-color: #ffe4e6;
+  color: #f43f5e;
+}
+
 .btn-favorite:hover {
   transform: scale(1.1);
   color: #f43f5e;
