@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoffeeCard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <article class="boba-card">
+    <header>
+      <div class="badge">
+        <span class="badge-bestseller"><i class="fa-solid fa-circle"></i>BEST SELLER</span>
+        <button class="btn-favorite" id="btn-favorite" type="button"><i class="fa-regular fa-heart"></i></button>
+      </div>
+      <img src="boba.png" alt="boba">
+      <div class="rating-tag">
+        <i class="fa-solid fa-star"></i>4.9<i class="fa-solid fa-circle"></i>142รีวิว
+      </div>
+    </header>
+    <div class="card-body">
+      <div class="product-info">
+        <div class="card-tile">
+          <h2 class="title">Brown Sugar Boba Latte</h2>
+          <span class="badge-type">เย็น (Iced)</span>
+        </div>
+        <p class="card-description">ไข่มุกเคี่ยวน้ำตาลทรายแดงโอกินาว่า นมสดแท้พรีเมียม 100% หอมมันกลมกล่อม ละมุนทุกคำ
+        </p>
+      </div>
+
+      <section class="option-group" data-group="size">
+        <div class="option-header">
+          <span class="option-title">ขนาดแก้ว(CUP-SIZE)</span>
+          <span class="option-value" id="size-status">large 22oz</span>
+        </div>
+        <div class="option-buttons">
+          <button class="btn-option" data-value="regular" data-extra="0" type="button"><span class="btn-label"><i
+                class="fa-solid fa-glass-water"></i>Regular</span><span class="btn-subtext">16
+              oz</span></button>
+          <button class="btn-option" data-value="large" data-extra="15" type="button"><span class="btn-label"><i
+                class="fa-solid fa-glass-water"></i>Large</span><span class="badge-extra">+15฿</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="option-group" data-group="sweetness">
+        <div class="option-header">
+          <span class="option-title">ระดับความหวาน(SWEETNESS)</span>
+          <span class="option-value" id="sweetness-status">100% หวานปกติ</span>
+        </div>
+        <div class="option-buttons">
+          <button class="btn-option" data-value="0%" type="button">0%</button>
+          <button class="btn-option" data-value="25%" type="button">25%</button>
+          <button class="btn-option" data-value="50%" type="button">50%</button>
+          <button class="btn-option" data-value="100%" type="button">100%</button>
+        </div>
+      </section>
+
+      <section class="option-group" data-group="ice">
+        <div class="option-header">
+          <span class="option-title">ปริมาณน้ำแข็ง(ICE LEVEL)</span>
+          <span class="option-value" id="ice-status">ไม่ใส่น้ำแข็ง(NO ICE)</span>
+        </div>
+        <div class="option-buttons">
+          <button class="btn-option" data-value="low" type="button">น้อย</button>
+          <button class="btn-option" data-value="medium" type="button">ปกติ</button>
+          <button class="btn-option" data-value="hight" type="button">ไม่ใส่</button>
+        </div>
+      </section>
+    </div>
+    <footer class="card-footer">
+      <div class="stepper">
+        <button class="stepper-btn" data-action="minus" type="button"><i class="fa-solid fa-minus"></i></button>
+        <span class="stepper-value" id="quantity-display">1</span>
+        <button class="stepper-btn" data-action="plus" type="button"><i class="fa-solid fa-plus"></i></button>
+      </div>
+      <button class="btn-add-cart" id="btn-add-cart" type="button">
+        <span class="btn-submit-label"><i class="fa-solid fa-basket-shopping"></i>เพิ่มลงตะกร้า</span>
+        <span class="btn-submit-price" id="total-price">฿110</span>
+      </button>
+    </footer>
+  </article>
+</body>
+
+</html>
