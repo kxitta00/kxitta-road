@@ -1,3 +1,4 @@
+/* 1. RESET & BASE LAYOUT  */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,6 +14,7 @@ body {
   min-height: 100vh;
 }
 
+/* 2. CARD CONTAINER */
 .boba-card {
   display: flex;
   overflow: hidden;
@@ -26,22 +28,242 @@ body {
   box-shadow: 0 20px 40px -10px rgba(67, 44, 25, 0.08);
 }
 
+/* 3. HEADER (IMAGE, BADGE & RATING) */
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  background-color: #2B1C11;
+  background-color: #23170D;
   padding: 20px;
 }
 
 .badge {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
 }
 
-header img {
-  width: 300px;
+.badge-bestseller {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px;
+  gap: 6px;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  background-color: #EAE9E7;
 }
+
+.badge-bestseller i {
+  color: #CA9869;
+  font-size: 0.45rem;
+}
+
+.btn-favorite {
+  background-color: #FFFFFF;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.05rem;
+  width: 36px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-favorite.active {
+  background-color: #FEE2E2;
+  color: #EF4444;
+}
+
+.btn-favorite:hover {
+  background-color: #FEE2E2;
+  color: #EF4444;
+  transform: scale(1.1);
+}
+
+header img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  display: block;
+}
+
+.rating-tag {
+  background-color: #2A1C10;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 6px;
+  left: 20px;
+  bottom: 16px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.rating-tag .fa-star {
+  color: #FBBF24;
+}
+
+.rating-tag .review {
+  color: #C2BEBA;
+}
+
+.rating-tag .fa-circle {
+  font-size: 0.3rem;
+  color: #C2BEBA;
+}
+
+/* 4. PRODUCT INFO & DETAILS */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  margin-top: -12px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-tile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-tile h2 {
+  color: #1E1418;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-tile .badge-type {
+  color: #C69059;
+  background-color: #F9F2EA;
+  font-size: 0.75rem;
+  font-weight: 450;
+  border-radius: 4px;
+  padding: 2px 8px;
+
+}
+
+.product-info p {
+  color: #987557;
+  font-size: 0.75rem;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #F2ECE4;
+}
+
+/* 5. OPTION GROUPS & BUTTONS */
+.option-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.option-group .option-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #1E1418;
+}
+
+.option-group .option-header .option-value {
+  color: #967e68;
+  font-weight: 400;
+}
+
+.option-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+.option-buttons .btn-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  padding: 8px 12px;
+  border: none;
+  width: 100%;
+  color: #1E1418;
+  background-color: #FEFDFB;
+  border: 1px solid#EDE5D8;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  min-height: 44px;
+}
+
+.btn-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-label i {
+  color: #C48B54;
+}
+
+.cup-size .btn-option {
+  justify-content: space-between;
+}
+
+.btn-subtext,
+.badge-extra {
+  color: #786E66;
+  font-size: 0.75rem;
+}
+
+.badge-extra {
+  padding: 2px 4px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.option-buttons .btn-option:hover {
+  background-color: #F8F3EC;
+  border-color: #C48B54;
+  transform: translateY(-1px);
+}
+
+.option-buttons .btn-option.active {
+  background-color: #261911;
+  color: #FFFFFF;
+  border-color: #261911;
+}
+
+.btn-option.active .badge-extra {
+  background-color: #D0C8BE;
+  color: #BB8D4A;
+}
+
+/* 6. CARD FOOTER (STEPPER & SUBMIT) */
