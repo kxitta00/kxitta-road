@@ -45,22 +45,24 @@
   - การทำ Micro-animations ด้วย `transition` และ `:hover` ให้ปุ่ม/การ์ดดูมีชีวิต
 
 #### หมวดที่ 2: DOM & State Machinery (เสาที่ 3, 4, 5, 6)
-- [ ] **Quest 1.3 — Element Selection & Type Casting:**
+- [x] **Quest 1.3 — Element Selection & Type Casting:**
   - เข้าใจ `document.getElementById` vs `querySelector` vs `querySelectorAll`
   - การระบุ Type ใน TypeScript: `as HTMLInputElement`, `as HTMLButtonElement`
-- [ ] **Quest 1.4 — DOM Update & Attribute Control:**
+- [x] **Quest 1.4 — DOM Update & Attribute Control:**
   - การเปลี่ยนข้อความด้วย `.textContent`
   - การสลับสไตล์ด้วย `.classList.toggle / add / remove`
   - การดึงและฝากข้อมูลผ่าน `data-*` attributes (`e.target.dataset`)
-- [ ] **Quest 1.5 — Browser Events & Event Delegation:**
-  - ดักจับ `click`, `change`, `submit` พร้อมสั่ง `e.preventDefault()`
-  - เข้าใจกลไก Event Bubbling: แปะ Listener ที่กล่องแม่ตัวเดียว แล้วใช้ `e.target.classList.contains(...)` ดักจับทุกปุ่มลูก
-- [ ] **Quest 1.6 — Immutable State Architecture:**
+- [x] **Quest 1.5 — Browser Events & Event Delegation:**
+  - ดักจับ `click`, 
+  - เข้าใจกลไก Event Bubbling: แปะ Listener ที่กล่องแม่ตัวเดียว แล้วใช้ `e.target.
+  -!!ย่อยยังไม่เคยจับ [x]`change`, `submit` พร้อมสั่ง `e.preventDefault()`
+  classList.contains(...)` ดักจับทุกปุ่มลูก
+- [x] **Quest 1.6 — Immutable State Architecture:**
   - เลิกใช้ `.push()`, `.splice()`
   - ฝังนิสัยสร้าง State ใหม่เสมอ: `[...state, item]`, `.filter()` สำหรับลบ, `.map()` สำหรับอัปเดต
 - 🎯 **Boss Fight ด่านที่ 1:** 
-  - สร้าง **Interactive Smart Card Component** (เช่น การ์ดสินค้าที่มีปุ่ม Favorite กดสลับสีได้, มี Stepper ปรับจำนวน +/- แล้วคำนวณราคาแบบเรียลไทม์, และมีปุ่ม Add to Cart ที่อัปเดต State) **เขียนจากศูนย์ด้วยมือตัวเอง 100% ไร้การก๊อปปี้**
-- 🧠 **เสาร์ประจำด่านนี้ [TS Logic Arena #1]:**
+  - [x]สร้าง **Interactive Smart Card Component** (เช่น การ์ดสินค้าที่มีปุ่ม Favorite กดสลับสีได้, มี Stepper ปรับจำนวน +/- แล้วคำนวณราคาแบบเรียลไทม์, และมีปุ่ม Add to Cart ที่อัปเดต State) **เขียนจากศูนย์ด้วยมือตัวเอง 100% ไร้การก๊อปปี้**
+- 🧠 [x]**เสาร์ประจำด่านนี้ [TS Logic Arena #1]:**
   - **Data Ingestion & Sanitization Engine:** รับ Raw String สกปรกที่มี Delimiter หลายแบบ ดักจับ `NaN`, ตัวเลขติดลบ, ลบช่องว่าง และคำนวณสรุปผลสถิติด้วย Defensive TypeScript เพียวๆ (ไม่แตะ HTML/CSS)
 
 ---
