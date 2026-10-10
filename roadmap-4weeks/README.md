@@ -75,7 +75,7 @@
 - [x] **Quest 2.3 — Mobile-First & Media Queries:** เขียน CSS สำหรับมือถือเป็นค่าเริ่มต้น แล้วใช้ `@media (min-width: 768px)` ขยายร่างบนคอม
 - [x] **Quest 2.4 — Responsive Navbar:** ทำ Navbar แนวนอนบนคอม และจัดระเบียบไม่ให้ล้นขอบจอบนมือถือ
 - 🎯 **Boss Fight ด่านที่ 2:** 
-  - สร้างหน้า **Responsive Catalog** (มี 6–8 การ์ด) ที่บนมือถือเรียง 1 คอลัมน์ บนจอคอมเรียง 3 คอลัมน์ โดยเปิด DevTools เช็คแล้ว **ไม่มีแถบเลื่อนแนวนอนกวนใจ (Zero-Overflow)**
+  -[x] สร้างหน้า **Responsive Catalog** (มี 6–8 การ์ด) ที่บนมือถือเรียง 1 คอลัมน์ บนจอคอมเรียง 3 คอลัมน์ โดยเปิด DevTools เช็คแล้ว **ไม่มีแถบเลื่อนแนวนอนกวนใจ (Zero-Overflow)**
 - 🧠 **เสาร์ประจำด่านนี้ [TS Logic Arena #2]:**
   - **Complex Object & Array Pipeline:** รับข้อมูลซ้อน (Nested Objects) ทำการคัดกรอง ซ้อนเงื่อนไข และจัดเรียง (Sorting) ข้อมูลด้วย TypeScript
 

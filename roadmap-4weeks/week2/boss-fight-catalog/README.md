@@ -1,0 +1,119 @@
+# Boss Fight ด่านที่ 2: Responsive Catalog (Artisan Roastery)
+
+เอกสารข้อมูลการออกแบบ (Design Specs), เนื้อหา (Content Copywriting), และโทนสี สำหรับสร้างหน้าร้านค้า Responsive Single-Page Storefront
+
+- **ภาพต้นแบบ (UI Mockup):** [design/mockup.png](file:///home/kxitta/lernTs/roadmap-4weeks/week2/boss-fight-catalog/design/mockup.png)
+
+---
+
+## 1. จานสีและระบบดีไซน์ (Color Tokens & Design System)
+
+| ส่วนประกอบ (Element) | รหัสสี (Hex Code) | คำอธิบายการใช้งาน |
+| :--- | :--- | :--- |
+| **Page Background** | `#fdfbf7` | สีพื้นหลังหน้าเว็บ (โทนวานิลลา/ครีมอุ่น สไตล์สแกนดิเนเวียน) |
+| **Card Background** | `#ffffff` | สีพื้นหลังการ์ดสินค้า (สีขาวสะอาดตา ตัดกับพื้นหลังครีม) |
+| **Primary Text (Heading)** | `#1c1917` | สีตัวหนังสือหัวข้อหลัก (สีกาแฟเข้ม Espresso ให้ความรู้สึกพรีเมียม) |
+| **Secondary Text (Body)** | `#78716c` | สีคำอธิบายและตัวหนังสือรอง (สีเทาอุ่น Charcoal อ่านง่าย สบายตา) |
+| **Accent / CTA Button** | `#d97706` | สีปุ่ม "Order Now" และป้ายเน้น (สีส้มอำพัน/คาราเมล) |
+| **Button Hover** | `#b45309` | สีปุ่มเมื่อเอาเมาส์ชี้ (สีคาราเมลเข้มขึ้น) |
+| **Badge Background** | `rgba(255, 255, 255, 0.9)` | สีพื้นหลังป้าย Tag บนรูป (สีขาวกึ่งโปร่งแสง มีความหรูหรา) |
+| **Border / Card Shadow** | `#f1ece4` | เส้นขอบบางๆ และเงาการ์ดเบาๆ (`rgba(0, 0, 0, 0.05)`) |
+
+---
+
+## 2. แบบอักษรที่แนะนำ (Typography)
+
+- **Headings (`h1`, `h2`, `h3`, `.logo`):** ใช้ฟอนต์แบบมีเชิง (Serif) เพื่อความหรูหราคราฟต์คาเฟ่
+  - `font-family: 'Playfair Display', Georgia, serif;`
+- **Body, Nav & Buttons:** ใช้ฟอนต์ไม่มีเชิง (Sans-Serif) เพื่อความชัดเจน อ่านง่าย
+  - `font-family: 'Inter', system-ui, sans-serif;`
+
+---
+
+## 3. รายละเอียดเนื้อหาและคำแปล (Content & Translations)
+
+### 3.1 ส่วนหัว (Header / Navigation)
+- **Logo:** `Artisan Roastery` (โรงคั่วกาแฟงานคราฟต์)
+- **Nav Links:**
+  - `Menu` (เมนูเครื่องดื่มและขนม)
+  - `Beans` (เมล็ดกาแฟคั่ว)
+  - `Story` (เรื่องราวและที่มาของร้าน)
+  - `Contact` (ติดต่อเรา)
+
+### 3.2 ส่วนโปรโมต (Hero Section)
+- **Small Tag / Eyebrow:** `ESTABLISHED 2026` (ก่อตั้งเมื่อปี 2026)
+- **Main Heading (`h1`):** `Handcrafted Brews & Artisan Roasts` (กาแฟชงมือสุดประณีต และเมล็ดคั่วสูตรพิเศษ)
+- **Subtitle (`p`):** `Experience the finest selection of ethically sourced beans, meticulously roasted and brewed to perfection.`
+  *(แปล: สัมผัสเมล็ดกาแฟคุณภาพเยี่ยมที่คัดสรรมาอย่างเป็นธรรม คั่วอย่างพิถีพิถัน และสกัดออกมาอย่างสมบูรณ์แบบ)*
+- **Catalog Heading (`h2`):** `Our Signatures` (เมนูซิกเนเจอร์ประจำร้าน)
+- **Catalog Link:** `View full menu →` (ดูเมนูทั้งหมด)
+
+### 3.3 รายการสินค้าทั้ง 6 ชิ้น (Product Catalog - 6 Cards)
+
+#### การ์ดที่ 1: Espresso Tonic
+- **Badge:** `SIGNATURE`
+- **Title:** `Espresso Tonic`
+- **Tasting Notes:** `A refreshing collision of double espresso, premium tonic water, and a twist of fresh orange peel.`
+  *(แปล: เอสเพรสโซดับเบิ้ลช็อตผสมน้ำโทนิกซ่า และกลิ่นเปลือกส้มสดชื่น)*
+- **Price:** `$6.50`
+- **Button:** `Order Now`
+
+#### การ์ดที่ 2: Nitro Cold Brew
+- **Badge:** `BEST SELLER`
+- **Title:** `Nitro Cold Brew`
+- **Tasting Notes:** `Steeped for 18 hours and infused with nitrogen for a velvety texture and naturally sweet, creamy head.`
+  *(แปล: กาแฟสกัดเย็นบ่ม 18 ชั่วโมง อัดไนโตรเจนให้เนื้อสัมผัสนุ่มละมุนหวานธรรมชาติ)*
+- **Price:** `$5.50`
+- **Button:** `Order Now`
+
+#### การ์ดที่ 3: Single Origin Drip
+- **Badge:** `LIGHT ROAST`
+- **Title:** `Single Origin Drip`
+- **Tasting Notes:** `Ethiopia Yirgacheffe. Bright and floral with distinct notes of jasmine, bergamot, and a tea-like finish.`
+  *(แปล: เมล็ดเอธิโอเปีย กลิ่นหอมฟลอรัล ดอกมะลิ ซิตรัส และรสสัมผัสนุ่มนวลคล้ายชา)*
+- **Price:** `$4.50`
+- **Button:** `Order Now`
+
+#### การ์ดที่ 4: Dirty Coffee
+- **Badge:** `NEW`
+- **Title:** `Dirty Coffee`
+- **Tasting Notes:** `A stunning visual of hot, rich espresso cascading over ice-cold, creamy milk. Best enjoyed without stirring.`
+  *(แปล: ช็อตเอสเพรสโซเข้มข้นสกัดร้อน ราดลงบนนมสดเย็นจัด แยกชั้นเป็นลวดลาย ดื่มโดยไม่ต้องคน)*
+- **Price:** `$6.00`
+- **Button:** `Order Now`
+
+#### การ์ดที่ 5: Almond Croissant
+- **Badge:** `FRESH BAKED`
+- **Title:** `Almond Croissant`
+- **Tasting Notes:** `Twice-baked French butter pastry, generously filled with sweet almond frangipane and topped with toasted flakes.`
+  *(แปล: ครัวซองต์เนยฝรั่งเศสอบ 2 รอบ สอดไส้ครีมอัลมอนด์และโรยอัลมอนด์สไลซ์อบกรอบ)*
+- **Price:** `$5.00`
+- **Button:** `Order Now`
+
+#### การ์ดที่ 6: Matcha Latte
+- **Badge:** `ORGANIC`
+- **Title:** `Matcha Latte`
+- **Tasting Notes:** `Ceremonial grade Uji matcha whisked to a froth, served over carefully steamed milk with a touch of honey.`
+  *(แปล: ผงมัทฉะอุจิเกรดพิธีการ ตีฟองเนียนนุ่มผสมนมสดอุ่นและน้ำผึ้งธรรมชาติ)*
+- **Price:** `$6.50`
+- **Button:** `Order Now`
+
+### 3.4 ส่วนท้ายหน้าเว็บ (Footer)
+- **Brand Title:** `Artisan Roastery`
+- **Hours:** `Open Daily: 7:00 AM — 5:00 PM`
+- **Address:** `123 Coffee Lane, Brew District, BK 10110`
+- **Copyright:** `© 2026 Artisan Roastery. All rights reserved.`
+
+---
+
+## 4. แผนผังเลย์เอาต์ตามขนาดหน้าจอ (Responsive Behavior)
+
+- **Mobile View (< 768px):**
+  - Padding ซ้าย-ขวาของหน้าจอ: `16px` – `20px`
+  - Navbar: เรียงตัวแนวตั้ง (Logo อยู่บน เมนูอยู่ล่าง) จัดกึ่งกลาง
+  - Catalog Grid: เรียง **1 คอลัมน์** เต็มความกว้างหน้าจอ
+  - **Zero Horizontal Overflow:** ห้ามมีแถบเลื่อนแนวนอนเด็ดขาด
+- **Desktop View (≥ 768px / 1024px):**
+  - Padding ซ้าย-ขวาของหน้าจอ: `40px` – `80px` (หรือใช้ `max-width: 1200px; margin: 0 auto;`)
+  - Navbar: เรียงตัวแนวนอน (Logo อยู่ซ้ายสุด เมนูอยู่ขวาสุด)
+  - Catalog Grid: ดีดตัวเป็น **3 คอลัมน์** (2 แถว แถวละ 3 ใบ)
