@@ -70,10 +70,10 @@
 ### 🛡️ ด่านที่ 2: ปลดล็อกมิติหน้าจอ (CSS Grid & Responsive Web Design)
 **โจทย์ใหญ่:** ก้าวข้ามจาก Component เดี่ยว สู่การจัดหน้าระดับ Page ที่ปรับตัวตามทุกขนาดหน้าจอ
 
-- [ ] **Quest 2.1 — 2D CSS Grid:** เข้าใจ `display: grid`, `grid-template-columns: repeat(3, 1fr)`, และ `gap`
-- [ ] **Quest 2.2 — Auto-Fit Magic:** ใช้ `repeat(auto-fit, minmax(260px, 1fr))` ให้การ์ดตัดแถวอัตโนมัติโดยไม่ต้องพึ่ง Media Query
-- [ ] **Quest 2.3 — Mobile-First & Media Queries:** เขียน CSS สำหรับมือถือเป็นค่าเริ่มต้น แล้วใช้ `@media (min-width: 768px)` ขยายร่างบนคอม
-- [ ] **Quest 2.4 — Responsive Navbar:** ทำ Navbar แนวนอนบนคอม และจัดระเบียบไม่ให้ล้นขอบจอบนมือถือ
+- [x] **Quest 2.1 — 2D CSS Grid:** เข้าใจ `display: grid`, `grid-template-columns: repeat(3, 1fr)`, และ `gap`
+- [x] **Quest 2.2 — Auto-Fit Magic:** ใช้ `repeat(auto-fit, minmax(260px, 1fr))` ให้การ์ดตัดแถวอัตโนมัติโดยไม่ต้องพึ่ง Media Query
+- [x] **Quest 2.3 — Mobile-First & Media Queries:** เขียน CSS สำหรับมือถือเป็นค่าเริ่มต้น แล้วใช้ `@media (min-width: 768px)` ขยายร่างบนคอม
+- [x] **Quest 2.4 — Responsive Navbar:** ทำ Navbar แนวนอนบนคอม และจัดระเบียบไม่ให้ล้นขอบจอบนมือถือ
 - 🎯 **Boss Fight ด่านที่ 2:** 
   - สร้างหน้า **Responsive Catalog** (มี 6–8 การ์ด) ที่บนมือถือเรียง 1 คอลัมน์ บนจอคอมเรียง 3 คอลัมน์ โดยเปิด DevTools เช็คแล้ว **ไม่มีแถบเลื่อนแนวนอนกวนใจ (Zero-Overflow)**
 - 🧠 **เสาร์ประจำด่านนี้ [TS Logic Arena #2]:**
