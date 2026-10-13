@@ -76,7 +76,7 @@
 - [x] **Quest 2.4 — Responsive Navbar:** ทำ Navbar แนวนอนบนคอม และจัดระเบียบไม่ให้ล้นขอบจอบนมือถือ
 - 🎯 **Boss Fight ด่านที่ 2:** 
   -[x] สร้างหน้า **Responsive Catalog** (มี 6–8 การ์ด) ที่บนมือถือเรียง 1 คอลัมน์ บนจอคอมเรียง 3 คอลัมน์ โดยเปิด DevTools เช็คแล้ว **ไม่มีแถบเลื่อนแนวนอนกวนใจ (Zero-Overflow)**
-- 🧠 **เสาร์ประจำด่านนี้ [TS Logic Arena #2]:**
+- 🧠[x] **เสาร์ประจำด่านนี้ [TS Logic Arena #2]:**
   - **Complex Object & Array Pipeline:** รับข้อมูลซ้อน (Nested Objects) ทำการคัดกรอง ซ้อนเงื่อนไข และจัดเรียง (Sorting) ข้อมูลด้วย TypeScript
 
 ---
@@ -98,17 +98,18 @@
 
 ---
 
-### 🚀 ด่านที่ 4: รวมร่างสร้างบ้านหลังใหญ่ (Capstone: CS Study Plan สู่ Vercel)
-**โจทย์ใหญ่:** นำทุกวิชาที่ลับคมมาสร้างโปรเจกต์ของจริงขึ้นออนไลน์เพื่อเป็นผลงานใน Portfolio
+### 🚀 ด่านที่ 4: รวมร่างสร้างบ้านหลังใหญ่ (Capstone: Quick Expense Tracker สู่ Vercel)
+**โจทย์ใหญ่:** นำทุกวิชาที่ลับคมมาสร้างเว็บแอปพลิเคชันแก้ปัญหาจริง บันทึกรายรับ-รายจ่ายเน้นมือถือ (Mobile-First)
 
-- [ ] **Quest 4.1 — Standalone Repo & Semantic HTML5:** เปิด Repo แยกเดี่ยว `cs-study-plan` พร้อมวางโครงสร้าง `<header>`, `<nav>`, `<main>`, `<section>`
-- [ ] **Quest 4.2 — Design System & Dark Mode:** วางตัวแปร `:root`, ทำ Sticky Navbar, และวาง Responsive Grid 3 คอลัมน์
-- [ ] **Quest 4.3 — Data Engine & Type:** บรรจุข้อมูลวิชา CS65 ลง `curriculum-data.ts` พร้อมฟังก์ชันคำนวณหน่วยกิตด้วย `.reduce()`
-- [ ] **Quest 4.4 — Interactive DOM & LocalStorage:** เชื่อมปุ่มสลับแท็บปี 1–4 และปุ่ม Dark Mode บันทึกลง Storage
+- [ ] **Quest 4.1 — Standalone Repo & Semantic HTML5:** เปิด Repo แยกเดี่ยว `quick-expense-tracker` วางโครงสร้าง Mobile-First (Dashboard, Quick Add Form, History Feed)
+- [ ] **Quest 4.2 — Mobile-First Design System & Theme:** ออกแบบ UI สไตล์มินิมอล เน้นปุ่มกดด้วยนิ้วโป้ง (Thumb-Friendly), รองรับ Dark Mode และจอคอม
+- [ ] **Quest 4.3 — TypeScript Data Engine & .reduce():** วาง Data Model (`ExpenseItem`, `Category`), ฟังก์ชันคำนวณเงินคงเหลือสุทธิ (Net Balance) และสรุปยอดแยกหมวดหมู่ด้วย `.reduce()`
+- [ ] **Quest 4.4 — Interactive DOM & Safe LocalStorage:** ฟอร์มกดเลือกหมวดหมู่+พิมพ์ยอดเงินไวๆ, ดักจับ Validation, ปุ่มลบรายการ และบันทึกลง `localStorage` ปิดเว็บข้อมูลไม่หาย
 - [ ] **Quest 4.5 — Production Launch:**
   - Push ขึ้น GitHub ส่วนตัว
   - เชื่อมต่อและ Deploy ขึ้น **Vercel** รับ Live URL ของจริง
-  - เขียน `README.md` ภาษาอังกฤษสวยงามพร้อมรูป Mockup แปะลง Resume ได้ทันที!
+  - เพิ่มทางลัด "Add to Home Screen" บนมือถือ ใช้งานได้เหมือนแอปจริง
+  - เขียน `README.md` ภาษาอังกฤษสวยงามสรุป Architecture และ Live Demo แปะลง Portfolio ทันที!
 
 ---
 
@@ -118,7 +119,7 @@
 1. **Interactive Smart Component:** การ์ดอินเตอร์แอคทีฟที่เขียนด้วยมือเปล่า 100% มีทั้ง State, Events และ Positioning
 2. **Responsive Catalog Page:** หน้าแคตตาล็อกหลายคอลัมน์ที่ย่อ-ขยายตามหน้าจอคอมและมือถือโดย **ไม่มีแถบเลื่อนแนวนอน (Zero-Overflow)**
 3. **Live Data Explorer:** มินิแอปที่ดึงข้อมูล JSON สดจาก Public API มีสถานะ Loading/Error และเซฟลง `localStorage` แบบปลอดภัย
-4. **🚀 CS Study Plan บน Vercel:** เว็บแอปพลิเคชันหลักสูตรของจริง มี Dark Mode ใช้งานได้จริง มี URL ส่งให้เพื่อนในสาขาเปิดดูผ่านมือถือได้
+4. **🚀 Quick Expense Tracker บน Vercel:** เว็บแอปบันทึกรายรับ-รายจ่าย Mobile-First แก้ปัญหาการคำนวณเงินในชีวิตประจำวัน บันทึกลง LocalStorage มี URL เปิดใช้บนมือถือจริง
 
 ### B. สัญชาตญาณวิศวกรซอฟต์แวร์ (Engineering Instincts)
 - **มองภาพ UI แล้วถอดเป็นกล่องได้ทันที:** เห็นดีไซน์ไหนก็แกะออกเป็น `Skeleton -> Layout -> Skin -> Brain` ได้โดยไม่ต้องนั่งงง
