@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>async-fetch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <button id="btn-success">โหลดสินค้าปกติ (ID 1)</button>
+  <button id="btn-error">ทดสอบระบบพัง (ID 999999)</button>
+  <div id="loading" class="hidden">กำลังโหลดข้อมูล...</div>
+  <div id="error" class="hidden">
+    <p id="error-msg"></p>
+  </div>
+  <div id="success" class="hidden">
+    <img id="prod-img">
+    <h2 id="prod-title"></h2>
+    <p id="prod-price"></p>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+
+</html>

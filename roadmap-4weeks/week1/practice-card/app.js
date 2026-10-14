@@ -51,3 +51,13 @@ btnAddToCart?.addEventListener("click", () => {
   }
   console.log("Cart ปัจจุบัน:", cart);
 });
+function removeFromCart(productId) {
+  const newCart = cart.filter((item) => {
+    return item.id !== productId;
+  });
+  cart = newCart;
+  console.log("Cart หลังลบ:", cart);
+}
+cart = [{ id: "shoes-01", name: "Nike", price: 149, quantity: 1 }];
+console.log("ก่อนลบ:", cart);
+removeFromCart("shoes-01");

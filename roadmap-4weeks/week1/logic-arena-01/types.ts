@@ -16,7 +16,6 @@ export type ParseResult = {
 }
 
 
-
 export type BranchSummary = {
   id: string;
   totalBranchRevenue: number;

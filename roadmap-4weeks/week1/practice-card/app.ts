@@ -68,3 +68,16 @@ btnAddToCart?.addEventListener('click', () => {
   console.log('Cart ปัจจุบัน:', cart); //สั้งแสดงผลเพื่อเช็ค
 
 })
+
+function removeFromCart(productId: string): void {
+  const newCart = cart.filter(item => { return item.id !== productId }) //สร้างตัวแปร newCart แล้วดึง array cart มาใช้ filter คัดเอาตัวที่ไม่ตรงกับไอดีที่ต้องการลบมาเก้บไว้
+  cart = newCart //ส่งอาเรย์ใหม่เข้าไปเก็บไว้ในตัวแปร
+  console.log('Cart หลังลบ:', cart);
+}
+
+// 1. จำลองว่ามีของอยู่ในตะกร้า 1 ชิ้น
+cart = [{ id: 'shoes-01', name: 'Nike', price: 149, quantity: 1 }];
+console.log('ก่อนลบ:', cart);
+
+// 2. สั่งเรียกฟังก์ชันลบออก
+removeFromCart('shoes-01');

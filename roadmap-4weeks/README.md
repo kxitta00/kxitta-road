@@ -84,9 +84,9 @@
 ### 🌐 ด่านที่ 3: โลกภายนอก & Modern TypeScript (Async, Fetch API & .reduce)
 **โจทย์ใหญ่:** ดูดข้อมูลสดจาก Network และกำจัดลูปเถื่อนด้วย Functional Programming
 
-- [ ] **Quest 3.1 — Promise & `async / await`:** เข้าใจสถานะของ Promise และการรอข้อมูลจาก Network
-- [ ] **Quest 3.2 — Fetch API & Defensive Network:** ใช้ `fetch()` ดึงข้อมูลจาก Public API จริง (เช่น DummyJSON) พร้อมตรวจ `res.ok` และดัก Error ด้วย `try...catch`
-- [ ] **Quest 3.3 — UI State Presentation:** ทำหน้ากาก Loading Spinner และ Error Banner แจ้งเตือนผู้ใช้
+- [x] **Quest 3.1 — Promise & `async / await`:** เข้าใจสถานะของ Promise และการรอข้อมูลจาก Network
+- [x] **Quest 3.2 — Fetch API & Defensive Network:** ใช้ `fetch()` ดึงข้อมูลจาก Public API จริง (เช่น DummyJSON) พร้อมตรวจ `res.ok` และดัก Error ด้วย `try...catch`
+- [x] **Quest 3.3 — UI State Presentation:** ทำหน้ากาก Loading Spinner และ Error Banner แจ้งเตือนผู้ใช้
 - [ ] **Quest 3.4 — Safe Web Storage:** ดึง `localStorage` มาใช้แบบไม่แครช
 - [ ] **Quest 3.5 — ปราบมาร `.reduce()`:** ใช้ `.reduce()` หาผลรวม (Sum), Max/Min, และ Group By จัดกลุ่มข้อมูลเป็น Object Map
 - [ ] **Quest 3.6 — Discriminated Unions:** ออกแบบ State แบบปลอดภัย 100%:
